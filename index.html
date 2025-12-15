@@ -37,7 +37,10 @@ body {
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* PARTICLES */
 #particle-canvas {
@@ -178,7 +181,9 @@ footer {
 }
 
 @media (max-width: 600px) {
-  header h1 { font-size: 2.2rem; }
+  header h1 {
+    font-size: 2.2rem;
+  }
 
   .mobile-cta {
     display: block;
@@ -207,6 +212,7 @@ footer {
 
 <header class="hero">
   <div class="profile-img">
+    <!-- CHANGE profile.png TO YOUR CURRENT IMAGE NAME IF DIFFERENT -->
     <img src="profile.png" alt="Elite VIP Profile">
   </div>
 
@@ -294,11 +300,11 @@ const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 
 function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 resize();
-addEventListener("resize", resize);
+window.addEventListener("resize", resize);
 
 const particles = Array.from({ length: 80 }, () => ({
   x: Math.random() * canvas.width,
@@ -326,6 +332,7 @@ function animate() {
 
   requestAnimationFrame(animate);
 }
+
 animate();
 </script>
 
