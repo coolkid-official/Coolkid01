@@ -6,28 +6,12 @@
 
 <title>Elite VIP Fixed Matches | Official Registration</title>
 
-<meta name="description" content="Join Elite VIP Fixed Matches for professional match insights, verified VIP access, and direct WhatsApp support. Responsible participation only.">
+<meta name="description" content="Official Elite VIP Fixed Matches registration platform. Professional insights, verified VIP access, and responsible participation.">
 
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- SEO Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Elite VIP Fixed Matches",
-  "url": "https://yourwebsite.com",
-  "logo": "https://i.ibb.co/N6WLvwN/elite-vip-logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+254113206503",
-    "contactType": "Customer Support"
-  }
-}
-</script>
 
 <style>
 :root {
@@ -36,12 +20,12 @@
   --dark: #0a0a0a;
   --light: #ffffff;
   --text-light: #cccccc;
-  --bg-section: #111111;
+  --bg-section: #111;
   --bg-card: #151515;
   --radius: 14px;
-  --transition: 0.3s ease;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -57,23 +41,6 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: var(--transition);
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* PARTICLES */
 #particle-canvas {
@@ -91,21 +58,61 @@ header.hero {
   z-index: 1;
 }
 
+/* ✅ PROFESSIONAL VIP LOGO */
 .profile {
   width: 160px;
   height: 160px;
   margin: auto;
   border-radius: 50%;
-  border: 4px solid var(--primary);
-  background: url("https://i.ibb.co/N6WLvwN/elite-vip-logo.png") center/cover no-repeat;
-  box-shadow: 0 0 30px rgba(37,211,102,0.5);
-  margin-bottom: 20px;
+  background: radial-gradient(circle at top left, #2cff88, #0bbf5a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    0 0 30px rgba(37,211,102,0.6),
+    inset 0 0 20px rgba(0,0,0,0.4);
+  margin-bottom: 25px;
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid rgba(37,211,102,0.7);
+  animation: pulse 2.5s infinite;
+}
+
+.profile span {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000;
+}
+
+.profile .elite {
+  font-size: 1.4rem;
+}
+
+.profile .vip {
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
 }
 
 header h1 {
   font-size: 3rem;
 }
-header h1 span { color: var(--primary); }
+
+header h1 span {
+  color: var(--primary);
+}
 
 header p {
   max-width: 800px;
@@ -113,7 +120,13 @@ header p {
   color: var(--text-light);
 }
 
-/* SECTIONS */
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
 .section {
   background: var(--bg-section);
   padding: 40px 30px;
@@ -126,16 +139,19 @@ header p {
 
 .section h2 {
   text-align: center;
+  font-size: 2.2rem;
   margin-bottom: 20px;
-  font-size: 2.3rem;
 }
 
-.section p, .section li {
+.section p,
+.section li {
   color: var(--text-light);
   margin-top: 8px;
 }
 
-ul, ol { margin-left: 20px; }
+ul, ol {
+  margin-left: 20px;
+}
 
 /* BUTTONS */
 .btn {
@@ -145,7 +161,7 @@ ul, ol { margin-left: 20px; }
   font-size: 1.1rem;
   font-weight: 600;
   margin: 10px;
-  transition: var(--transition);
+  transition: 0.3s;
 }
 
 .btn-primary {
@@ -180,7 +196,7 @@ th {
   color: #000;
 }
 
-/* COUNTERS */
+/* STATS */
 .counters {
   display: flex;
   justify-content: center;
@@ -242,45 +258,51 @@ footer {
 
 <canvas id="particle-canvas"></canvas>
 
-<header class="hero" role="banner">
-  <div class="profile"></div>
-  <h1 class="hidden">Elite <span>VIP Fixed Matches</span></h1>
-  <p class="hidden">Official VIP registration platform offering professional match insights with responsible participation.</p>
+<header class="hero">
+  <div class="profile">
+    <span>
+      <div class="elite">ELITE</div>
+      <div class="vip">VIP</div>
+    </span>
+  </div>
+
+  <h1>Elite <span>VIP Fixed Matches</span></h1>
+  <p>Official registration platform for disciplined VIP members seeking professional insights. Responsible participation only.</p>
 </header>
 
-<main class="container" role="main">
+<main class="container">
 
-<section class="section hidden">
+<section class="section">
 <h2>About Elite VIP</h2>
 <ul>
 <li>Professional correct score guidance</li>
-<li>Verified VIP members only</li>
+<li>Verified VIP-only access</li>
 <li>Structured stake management</li>
 <li>Direct WhatsApp support</li>
 </ul>
 </section>
 
-<section class="section hidden">
+<section class="section">
 <h2>Why Choose Us</h2>
 <ul>
 <li>1200+ VIP members</li>
-<li>3500+ insights delivered</li>
+<li>3500+ matches provided</li>
 <li>15 countries served</li>
-<li>Secure payment system</li>
+<li>Secure registration process</li>
 </ul>
 </section>
 
-<section class="section hidden">
+<section class="section">
 <h2>Registration Steps</h2>
 <ol>
 <li>Contact via WhatsApp or Telegram</li>
-<li>Submit registration details</li>
+<li>Submit details</li>
 <li>Complete payment</li>
-<li>Verification & VIP access</li>
+<li>Get verified VIP access</li>
 </ol>
 </section>
 
-<section class="section hidden">
+<section class="section">
 <h2>Registration Fees</h2>
 <table>
 <tr><th>Country</th><th>Fee</th></tr>
@@ -294,31 +316,22 @@ footer {
 </table>
 </section>
 
-<section class="section hidden">
-<h2>Elite Stats</h2>
-<div class="counters">
-<div class="counter-box"><h3 class="counter" data-target="1200">0</h3><p>VIP Members</p></div>
-<div class="counter-box"><h3 class="counter" data-target="15">0</h3><p>Countries</p></div>
-<div class="counter-box"><h3 class="counter" data-target="3500">0</h3><p>Matches</p></div>
-</div>
-</section>
-
-<section class="section hidden">
+<section class="section">
 <h2>VIP Rules & Responsibility</h2>
 <ul>
 <li>No free matches after joining</li>
 <li>No refunds after access</li>
-<li>Information is confidential</li>
+<li>Information must remain confidential</li>
 <li>Follow stake guidance strictly</li>
 </ul>
 <p style="color:#ff5555;margin-top:15px;">
-⚠ Participation is voluntary. No guarantees implied. Follow local laws.
+⚠ No guarantees implied. Participation is voluntary and subject to local laws.
 </p>
 </section>
 
-<section class="section hidden" style="text-align:center;">
-<a class="btn btn-primary" href="https://wa.me/254113206503" aria-label="Contact via WhatsApp">CONTACT WHATSAPP</a>
-<a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank" rel="noopener noreferrer">JOIN TELEGRAM</a>
+<section class="section" style="text-align:center;">
+<a class="btn btn-primary" href="https://wa.me/254113206503">CONTACT WHATSAPP</a>
+<a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
 </section>
 
 </main>
@@ -332,40 +345,7 @@ footer {
 </div>
 
 <script>
-// Reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add("visible");
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-
-// Counters
-document.querySelectorAll(".counter").forEach(counter => {
-  const target = +counter.dataset.target;
-  let count = 0;
-  const step = target / 200;
-
-  const update = () => {
-    count += step;
-    if (count < target) {
-      counter.innerText = Math.ceil(count);
-      requestAnimationFrame(update);
-    } else {
-      counter.innerText = target;
-    }
-  };
-
-  new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) update();
-  }, { threshold: 1 }).observe(counter);
-});
-
-// Particles
+// PARTICLES
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 
