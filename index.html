@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite VIP Ultra-Premium Registration</title>
+<meta name="description" content="Join Elite VIP Fixed Odds Registration – 359+ Odds Guaranteed. Contact +254113206503 on WhatsApp for registration.">
+<style>
+/* Base */
+body, html {margin:0; padding:0; font-family:'Arial', sans-serif; scroll-behavior:smooth; background: linear-gradient(-45deg,#f0f4f8,#d9e2ec,#cde1f2,#e2f0fc); background-size:400% 400%; animation:gradient 20s ease infinite; color:#333;}
+@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.container{max-width:900px;margin:30px auto;padding:30px;background:#fff;border-radius:20px;box-shadow:0 12px 35px rgba(0,0,0,0.25);}
+h1{text-align:center;font-size:36px;color:#2a9d8f;margin-bottom:15px;text-transform:uppercase;letter-spacing:1px;}
+.vip-badge{display:inline-block;background:linear-gradient(135deg,#FFD700,#FFC700); color:#fff;font-weight:bold;font-size:20px;padding:12px 30px;border-radius:60px;box-shadow:0 5px 20px rgba(0,0,0,0.4);margin-bottom:25px;}
+.nav-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-bottom:25px;position:sticky;top:0;background:#fff;padding:15px 0;z-index:100;box-shadow:0 5px 25px rgba(0,0,0,0.15);border-radius:15px;}
+.nav-steps button{padding:12px 25px;border:none;border-radius:60px;cursor:pointer;font-weight:bold;transition:all 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+.nav-step1{background-color:#2a9d8f;color:#fff;}
+.nav-step2{background-color:#e76f51;color:#fff;}
+.nav-steps button:hover{transform:scale(1.08);}
+
+/* Steps */
+.step{display:flex;flex-direction:column;border-radius:20px;padding:30px;margin:20px 0;opacity:0;transform:translateY(50px);transition:all 0.7s ease;position:relative;box-shadow:0 10px 25px rgba(0,0,0,0.3);border:2px solid #2a9d8f;background:linear-gradient(135deg,#2a9d8f,#1b5f4f);}
+.step.visible{opacity:1;transform:translateY(0);}
+.step-number{font-size:28px;font-weight:bold;margin-bottom:20px;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,0.35);}
+li{margin:10px 0;position:relative;padding-left:30px;cursor:pointer;transition: transform 0.2s;}
+li:hover{transform:scale(1.05);}
+li::before{content:"⬜";position:absolute;left:0;top:0;font-size:18px;transition:all 0.3s;}
+li.completed::before{content:"✅";}
+
+/* Next Step Button */
+.next-step-btn{display:inline-block;margin-top:20px;padding:14px 30px;background:#e76f51;color:#fff;border:none;border-radius:30px;font-weight:bold;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.25);transition:transform 0.3s, background 0.3s;}
+.next-step-btn:hover{background:#d85c3f; transform:scale(1.05);}
+
+/* WhatsApp Button */
+.whatsapp-btn{display:block;width:100%;text-align:center;margin:25px 0;padding:18px 0;background-color:#25D366;color:#fff;font-size:22px;font-weight:bold;text-decoration:none;border-radius:25px;transition:all 0.3s;box-shadow:0 7px 20px rgba(0,0,0,0.3);}
+.whatsapp-btn:hover{background-color:#1ebe5d;transform:scale(1.05);}
+
+/* Testimonials Carousel */
+.testimonials-container{position:relative; overflow:hidden; margin:30px 0; border-radius:20px;}
+.testimonials-wrapper{display:flex; transition:transform 0.5s ease;}
+.testimonial{min-width:100%; background:#f4f4f4; padding:25px; border-radius:20px; box-shadow:0 6px 25px rgba(0,0,0,0.18); text-align:center; font-style:italic; font-size:18px; color:#333;}
+
+/* Navigation Dots */
+.dots-container{text-align:center;margin-top:15px;}
+.dot{display:inline-block;width:12px;height:12px;margin:0 5px;background:#ccc;border-radius:50%;cursor:pointer;transition:background 0.3s;}
+.dot.active{background:#2a9d8f;}
+
+/* Floating buttons */
+#back-to-top, #theme-toggle{position:fixed;padding:14px 20px;border-radius:50px;font-weight:bold;cursor:pointer;z-index:999;transition:all 0.3s;box-shadow:0 7px 20px rgba(0,0,0,0.3);}
+#back-to-top{bottom:20px;right:20px;background:#2a9d8f;color:#fff;display:none;}
+#theme-toggle{bottom:20px;left:20px;background:#2a9d8f;color:#fff;}
+#back-to-top:hover,#theme-toggle:hover{transform:scale(1.1);background:#1f7c6e;}
+
+/* Progress */
+.progress-container{background:#dcdcdc;border-radius:15px;overflow:hidden;margin:25px 0;}
+.progress-bar{height:16px;width:0;background:#2a9d8f;transition:width 0.5s;border-radius:15px;}
+
+/* Confetti */
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;}
+
+/* Dark mode */
+body.dark{background:#1e1e2f;color:#f0f0f0;}
+body.dark .container{background:#2a2a3d;}
+body.dark .nav-steps{background:#2a2a3d;box-shadow:none;}
+body.dark .step{border-color:#128c7e;}
+body.dark .whatsapp-btn{background-color:#128c7e;}
+body.dark #back-to-top,#theme-toggle{background:#128c7e;}
+
+/* Pulse animation */
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+.pulse{animation:pulse 0.8s ease;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="vip-badge">🌟 ULTRA VIP 🌟</div>
+  <h1>Elite VIP Fixed Odds Registration</h1>
+  <p>We deal with VIP fixed odds correct scores of <strong>359 odds and above</strong>. Complete the registration fee of <strong>20,000 UGX</strong> by following the steps below:</p>
+
+  <div class="nav-steps">
+    <button class="nav-step1" onclick="scrollToStep('step1')">Step 1</button>
+    <button class="nav-step2" onclick="scrollToStep('step2')">Step 2</button>
+  </div>
+
+  <!-- STEP 1: Payment Instructions -->
+  <div class="step step1" id="step1">
+    <div class="step-number">1</div>
+    <div class="step-content">
+      <h2>💰 Payment Instructions</h2>
+      <ul id="payment-steps">
+        <li data-step="1">Dial *165#</li>
+        <li data-step="2">Send money</li>
+        <li data-step="3">Select Africa → East Africa → Kenya</li>
+        <li data-step="4">Safaricom MPESA</li>
+        <li data-step="5">Number: 254711949382</li>
+        <li data-step="6">Amount: 20,000 UGX</li>
+        <li data-step="7">Enter PIN and send</li>
+      </ul>
+      <p><strong>Payee Name:</strong> BRIAN K.</p>
+      <button class="next-step-btn" onclick="confirmNextStep()">Next Step ➡️</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: WhatsApp Contact -->
+  <div class="step step2" id="step2">
+    <div class="step-number">2</div>
+    <div class="step-content">
+      <h2>📱 Contact via WhatsApp</h2>
+      <p>After completing the payment, click the button below to send a message and confirm your registration. Include your full name.</p>
+      <a id="whatsapp-btn" class="whatsapp-btn" href="https://wa.me/254113206503?text=Hello%2C%20I%20want%20to%20register%20for%20Elite%20VIP%20Guaranteed%20Matches" target="_blank">
+        Send WhatsApp Message
+      </a>
+      <p id="whatsapp-confirmation" style="display:none; margin-top:15px; font-weight:bold; color:#2a9d8f;">
+        ✅ Message sent! Wait for a response from Elite VIP.
+      </p>
+    </div>
+  </div>
+
+  <!-- Testimonials Carousel -->
+  <div class="testimonials-container">
+    <div class="testimonials-wrapper" id="testimonials-wrapper">
+      <div class="testimonial">“I joined Elite VIP and won my first 3 bets! Highly recommended.” – John K.</div>
+      <div class="testimonial">“The fixed odds are legit. Easy payment via WhatsApp. Ultra VIP experience!” – Mary L.</div>
+      <div class="testimonial">“Elite VIP helped me get guaranteed wins. Super reliable!” – Alex M.</div>
+    </div>
+    <div class="dots-container" id="dots-container"></div>
+  </div>
+
+  <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+  <footer>&copy; 2025 Elite VIP Registration. All rights reserved.</footer>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+<div id="back-to-top" onclick="scrollToTop()">⬆ Back to Top</div>
+<div id="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</div>
+<audio id="chime-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+
+<script>
+// Utilities
+function scrollToStep(id){document.getElementById(id).scrollIntoView({behavior:"smooth", block:"center"});}
+function scrollToTop(){window.scrollTo({top:0, behavior:"smooth"});}
+function toggleTheme(){document.body.classList.toggle('dark');}
+
+// STEP 1: Interactive checklist
+const steps = document.querySelectorAll('#payment-steps li');
+steps.forEach(li => {
+  li.addEventListener('click', () => li.classList.toggle('completed'));
+});
+function confirmNextStep(){
+  const allCompleted = Array.from(steps).every(li => li.classList.contains('completed'));
+  if(!allCompleted){
+    const proceed = confirm("Some steps are not completed. Are you sure you want to proceed?");
+    if(!proceed) return;
+  }
+  scrollToStep('step2');
+}
+
+// STEP 2: WhatsApp Confirmation
+const whatsappBtn = document.getElementById('whatsapp-btn');
+const whatsappConfirmation = document.getElementById('whatsapp-confirmation');
+whatsappBtn.addEventListener('click', () => {
+  whatsappConfirmation.style.display = 'block';
+  whatsappBtn.classList.add('pulse');
+  setTimeout(()=>{whatsappBtn.classList.remove('pulse');},800);
+});
+
+// Testimonials Carousel
+const wrapper = document.getElementById('testimonials-wrapper');
+const dotsContainer = document.getElementById('dots-container');
+const testimonials = wrapper.children;
+let currentIndex = 0;
+function updateCarousel(){
+  wrapper.style.transform = `translateX(-${currentIndex*100}%)`;
+  const dots = dotsContainer.children;
+  for(let i=0;i<dots.length;i++){
+    dots[i].classList.toggle('active', i===currentIndex);
+  }
+}
+function nextTestimonial(){
+  currentIndex = (currentIndex+1)%testimonials.length;
+  updateCarousel();
+}
+for(let i=0;i<testimonials.length;i++){
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', ()=>{currentIndex=i;updateCarousel();});
+  dotsContainer.appendChild(dot);
+}
+setInterval(nextTestimonial,5000);
+
+// Progress Bar Animation
+window.addEventListener('load',()=>{
+  const progressBar=document.getElementById('progress-bar');
+  let progress=0;
+  const interval=setInterval(()=>{
+    if(progress>=100)clearInterval(interval);
+    progress+=1; progressBar.style.width=progress+'%';
+  },15);
+
+  const allSteps=document.querySelectorAll('.step');
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.4});
+  allSteps.forEach(step=>observer.observe(step));
+});
+
+// Back-to-top button
+window.addEventListener('scroll',()=>{document.getElementById('back-to-top').style.display=(window.scrollY>200)?'block':'none';});
+
+// Confetti
+function createConfetti(){
+  const canvas=document.getElementById('confetti-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+  const confetti=[];for(let i=0;i<150;i++){confetti.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*6+4,d:Math.random()*50});}
+  function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);confetti.forEach(f=>{ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,Math.PI*2);ctx.fillStyle=`hsl(${Math.random()*360},100%,50%)`;ctx.fill();f.y+=Math.cos(f.d)+1+f.r/2;f.x+=Math.sin(f.d);if(f.y>canvas.height){f.y=0;f.x=Math.random()*canvas.width;}});requestAnimationFrame(draw);}
+  draw();
+}
+createConfetti();
+</script>
+
+</body>
+</html>
