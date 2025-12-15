@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Elite VIP Fixed Matches | Official Registration</title>
-
 <meta name="description" content="Official Elite VIP Fixed Matches registration platform. Professional insights, verified VIP access, and responsible participation.">
 
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -58,52 +55,22 @@ header.hero {
   z-index: 1;
 }
 
-/* ✅ PROFESSIONAL VIP LOGO */
-.profile {
+/* REAL PROFILE IMAGE */
+.profile-img {
   width: 160px;
   height: 160px;
   margin: auto;
   border-radius: 50%;
-  background: radial-gradient(circle at top left, #2cff88, #0bbf5a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow:
-    0 0 30px rgba(37,211,102,0.6),
-    inset 0 0 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 30px rgba(37,211,102,0.6);
   margin-bottom: 25px;
 }
 
-.profile::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 3px solid rgba(37,211,102,0.7);
-  animation: pulse 2.5s infinite;
-}
-
-.profile span {
-  text-align: center;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #000;
-}
-
-.profile .elite {
-  font-size: 1.4rem;
-}
-
-.profile .vip {
-  font-size: 2.3rem;
-  letter-spacing: 2px;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.6; }
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 header h1 {
@@ -196,27 +163,6 @@ th {
   color: #000;
 }
 
-/* STATS */
-.counters {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.counter-box {
-  background: var(--bg-card);
-  padding: 20px;
-  border-radius: var(--radius);
-  width: 160px;
-  text-align: center;
-}
-
-.counter-box h3 {
-  font-size: 2rem;
-  color: var(--primary);
-}
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -259,11 +205,9 @@ footer {
 <canvas id="particle-canvas"></canvas>
 
 <header class="hero">
-  <div class="profile">
-    <span>
-      <div class="elite">ELITE</div>
-      <div class="vip">VIP</div>
-    </span>
+  <div class="profile-img">
+    <!-- CHANGE profile.jpg TO YOUR REAL IMAGE -->
+    <img src="profile.jpg" alt="Elite VIP Profile">
   </div>
 
   <h1>Elite <span>VIP Fixed Matches</span></h1>
@@ -345,7 +289,7 @@ footer {
 </div>
 
 <script>
-// PARTICLES
+/* PARTICLES BACKGROUND */
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -356,33 +300,33 @@ function resize() {
 resize();
 addEventListener("resize", resize);
 
-const particles = Array.from({length: 80}, () => ({
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height,
-  r: Math.random()*2+1,
-  dx: (Math.random()-0.5)*0.5,
-  dy: (Math.random()-0.5)*0.5
+const particles = Array.from({ length: 80 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 2 + 1,
+  dx: (Math.random() - 0.5) * 0.5,
+  dy: (Math.random() - 0.5) * 0.5
 }));
 
-let last = 0;
-function animate(t) {
-  if (t - last < 30) return requestAnimationFrame(animate);
-  last = t;
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.clearRect(0,0,canvas.width,canvas.height);
   particles.forEach(p => {
     ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fillStyle = "rgba(37,211,102,0.3)";
     ctx.fill();
+
     p.x += p.dx;
     p.y += p.dy;
-    if (p.x<0||p.x>canvas.width) p.dx*=-1;
-    if (p.y<0||p.y>canvas.height) p.dy*=-1;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
   });
+
   requestAnimationFrame(animate);
 }
-requestAnimationFrame(animate);
+animate();
 </script>
 
 </body>
