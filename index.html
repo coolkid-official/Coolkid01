@@ -86,6 +86,19 @@
       color: var(--text-light);
     }
 
+    /* SCROLL HINT */
+    .scroll-hint {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: var(--primary);
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+
     .container {
       max-width: 1100px;
       margin: auto;
@@ -223,6 +236,10 @@
 
   <h1>Elite <span>VIP Fixed Matches</span></h1>
   <p>Official VIP registration platform offering structured insights for disciplined members. Participation is voluntary and responsible engagement is required.</p>
+
+  <div class="scroll-hint">
+    👇👇 Scroll down to continue 👇👇
+  </div>
 </header>
 
 <main class="container">
@@ -274,25 +291,6 @@
       <tr><td>Zambia</td><td>ZMW 250</td></tr>
       <tr><td>Zimbabwe</td><td>USD 55</td></tr>
     </table>
-
-    <p style="margin-top:15px;font-size:0.9rem;color:#aaaaaa;">
-      💱 <strong>Currency Note:</strong> All fees are payable in local currency. Exchange values may vary slightly depending on payment method or provider.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>VIP Rules, Trust & Legal Notice</h2>
-    <ul>
-      <li>VIP access is strictly confidential and non-transferable</li>
-      <li>No refunds once VIP access has been activated</li>
-      <li>No free content is provided after registration</li>
-      <li>Members must follow provided stake guidance responsibly</li>
-    </ul>
-
-    <p style="color:#ff7777;margin-top:18px;">
-      ⚠ <strong>Legal & Responsibility Disclaimer:</strong><br>
-      Elite VIP does not guarantee outcomes or profits. All information provided is for analytical and educational purposes only. Participation is voluntary and members are responsible for complying with local laws and regulations related to sports participation or gaming activities in their jurisdiction.
-    </p>
   </section>
 
   <section class="section" style="text-align:center;">
@@ -349,6 +347,14 @@
   }
 
   animate();
+
+  /* AUTO SCROLL */
+  setTimeout(() => {
+    window.scrollTo({
+      top: window.innerHeight * 0.6,
+      behavior: "smooth"
+    });
+  }, 1500);
 </script>
 
 </body>
