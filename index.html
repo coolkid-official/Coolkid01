@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Elite VIP Fixed Matches | Official Registration</title>
-  <meta name="description" content="Official Elite VIP Fixed Matches registration platform. Professional insights, verified VIP access, and responsible participation.">
+  <meta name="description" content="Official Elite VIP registration platform providing verified match insights and disciplined participation.">
 
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,6 @@
       --text-light: #cccccc;
       --bg-section: #111;
       --radius: 14px;
-      --new: #ffcc00;
     }
 
     * {
@@ -130,6 +129,8 @@
       font-weight: 600;
       margin: 10px;
       transition: 0.3s;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -192,6 +193,7 @@
         font-weight: bold;
         color: #000;
         font-size: 1.2rem;
+        text-decoration: none;
       }
     }
   </style>
@@ -232,6 +234,23 @@
     <li>Members across 15+ countries</li>
     <li>Private, secure & controlled registration</li>
   </ul>
+</section>
+
+<section class="section">
+  <h2>VIP Audio Briefing</h2>
+  <p style="text-align:center;color:#ccc;">
+    Tap play to hear a short introduction about our VIP service
+  </p>
+
+  <div style="text-align:center;">
+    <button id="playAudio" class="btn btn-primary">▶ Play Audio</button>
+    <button id="pauseAudio" class="btn btn-accent">⏸ Pause</button>
+  </div>
+
+  <audio id="vipAudio">
+    <source src="vip-intro.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
 </section>
 
 <section class="section">
@@ -278,7 +297,7 @@
 </section>
 
 <section class="section" style="text-align:center;">
-  <a class="btn btn-primary" href="https://wa.me/254113206503">CONTACT WHATSAPP</a>
+  <a class="btn btn-primary" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
   <a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
 </section>
 
@@ -326,10 +345,15 @@
   }
   animate();
 
+  // Audio Controls
+  const audio = document.getElementById("vipAudio");
+  document.getElementById("playAudio").onclick = () => audio.play();
+  document.getElementById("pauseAudio").onclick = () => audio.pause();
+
   setTimeout(()=>{
     window.scrollTo({ top: innerHeight*0.6, behavior:"smooth" });
   },1500);
 </script>
 
 </body>
-</html> 
+  </html>
