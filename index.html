@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elite VIP Fixed Matches | Official Registration</title>
-<meta name="description" content="Official Elite VIP Fixed Matches registration platform. Professional insights, AI-style odds predictions, verified VIP access.">
+
+<meta name="description" content="Elite VIP registration platform with AI-assisted odds predictions and professional VIP access.">
+
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -19,6 +21,7 @@
 --radius:14px;
 --warning:#ff7777;
 }
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:var(--dark);color:var(--light);overflow-x:hidden;}
 
@@ -43,6 +46,7 @@ margin-bottom:25px;
 header h1{font-size:3rem;}
 header h1 span{color:var(--primary);}
 header p{max-width:800px;margin:15px auto;color:var(--text-light);}
+
 .scroll-hint{font-size:2rem;margin-top:25px;animation:bounce 1.5s infinite;}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(12px);}}
 
@@ -95,17 +99,18 @@ background:var(--primary);text-align:center;padding:15px;z-index:999;
 
 /* Forms */
 form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
-input,select{
+input{
 padding:12px;border-radius:var(--radius);
 border:none;background:#222;color:#fff;font-size:1rem;
 }
 input:focus{outline:2px solid var(--primary);}
+
 #payment-instructions{
 background:#222;padding:15px;border-radius:var(--radius);
 color:var(--primary);font-weight:bold;margin-top:10px;
 }
 
-/* AI Odds Box */
+/* AI Odds */
 .ai-box{
 background:#0f1f17;
 border:2px solid var(--primary);
@@ -129,11 +134,7 @@ border-radius:20px;
 font-weight:bold;
 margin-bottom:10px;
 }
-.warning{
-color:var(--warning);
-margin-top:10px;
-font-size:.9rem;
-}
+.warning{color:var(--warning);font-size:.9rem;margin-top:10px;}
 </style>
 </head>
 
@@ -143,41 +144,25 @@ font-size:.9rem;
 
 <header class="hero">
 <div class="profile-img">
-<img src="profile.jpg" alt="Elite VIP Profile" loading="lazy">
+<img src="profile.jpg" alt="Elite VIP Profile">
 </div>
 <h1>Elite <span>VIP Fixed Matches</span></h1>
-<p>Official VIP registration platform offering structured insights & AI-style predictions.</p>
+<p>Professional VIP registration with AI-assisted odds predictions.</p>
 <div class="scroll-hint">👇👇</div>
 </header>
 
 <main class="container">
 
-<!-- EXISTING SECTIONS (UNCHANGED) -->
-<section class="section"><h2>About Elite VIP</h2>
+<section class="section">
+<h2>About Elite VIP</h2>
 <ul>
 <li>Professionally analyzed match insights</li>
 <li>Verified VIP-only private access</li>
 <li>Structured bankroll & stake guidance</li>
 <li>Direct WhatsApp & Telegram support</li>
-</ul></section>
+</ul>
+</section>
 
-<section class="section"><h2>Why Choose Us</h2>
-<ul>
-<li>1200+ verified VIP members</li>
-<li>3500+ historical match insights</li>
-<li>Members across 15+ countries</li>
-<li>Private, secure & controlled</li>
-</ul></section>
-
-<section class="section"><h2>Registration Steps</h2>
-<ol>
-<li>Contact us via WhatsApp or Telegram</li>
-<li>Submit details</li>
-<li>Pay registration fee</li>
-<li>Receive VIP access</li>
-</ol></section>
-
-<!-- 🔥 NEW AI ODDS SECTION -->
 <section class="section">
 <h2>AI Odds Prediction (Demo)</h2>
 <div class="ai-box">
@@ -190,13 +175,10 @@ font-size:.9rem;
 
 <div class="ai-result" id="aiResult"></div>
 
-<p class="warning">
-⚠ Predictions are AI-assisted & analytical only. Not guaranteed.
-</p>
+<p class="warning">⚠ Predictions are analytical only. No guaranteed profits.</p>
 </div>
 </section>
 
-<!-- VIP FORM & PAYMENT (UNCHANGED LOGIC) -->
 <section class="section">
 <h2>VIP Registration</h2>
 <form>
@@ -204,7 +186,10 @@ font-size:.9rem;
 <input placeholder="Phone Number">
 <input placeholder="Country">
 <input placeholder="Amount">
-<button class="btn btn-primary" type="button">Pay Now</button>
+<button type="button" class="btn btn-primary"
+onclick="window.location.href='https://wa.me/254113206503'">
+Pay & Confirm on WhatsApp
+</button>
 </form>
 </section>
 
@@ -216,7 +201,10 @@ font-size:.9rem;
 </main>
 
 <footer>© 2025 Elite VIP Fixed Matches. All Rights Reserved.</footer>
-<div class="mobile-cta"><a href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a></div>
+
+<div class="mobile-cta">
+<a href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
+</div>
 
 <script>
 /* PARTICLES */
@@ -236,14 +224,14 @@ if(o.y<0||o.y>c.height)o.dy*=-1;
 requestAnimationFrame(a);
 })();
 
-/* SCROLL */
+/* SCROLL ANIMATION */
 document.querySelectorAll('.section').forEach(s=>{
 new IntersectionObserver(e=>{
 if(e[0].isIntersecting)s.classList.add('visible');
 },{threshold:.2}).observe(s);
 });
 
-/* AI ODDS DEMO */
+/* AI DEMO LOGIC (FRONTEND) */
 function predictOdds(){
 const h=document.getElementById("homeTeam").value;
 const a=document.getElementById("awayTeam").value;
