@@ -67,6 +67,7 @@ input:focus, select:focus { outline:2px solid var(--primary); }
 .autocomplete-suggestions { position:absolute; top:100%; left:0; right:0; background:#222; border-radius:var(--radius); max-height:150px; overflow-y:auto; z-index:10; }
 .autocomplete-suggestions div { padding:10px; cursor:pointer; border-bottom:1px solid #333; }
 .autocomplete-suggestions div:hover, .autocomplete-suggestions .selected { background:#333; }
+.pay-buttons { display:flex; flex-direction:column; gap:10px; margin-top:10px; }
 </style>
 </head>
 
@@ -152,8 +153,11 @@ input:focus, select:focus { outline:2px solid var(--primary); }
     <input type="text" id="country" placeholder="Type your country..." autocomplete="off" required>
     <div class="autocomplete-suggestions" id="suggestions"></div>
     <input type="number" id="amount" placeholder="Registration Amount" required>
-    <button type="button" class="btn btn-primary" onclick="showPaymentInstructions()">Show Payment Instructions</button>
-    <button type="button" class="btn btn-accent" onclick="sendWhatsApp()">Send via WhatsApp</button>
+    <div class="pay-buttons">
+      <button type="button" class="btn btn-primary" onclick="showPaymentInstructions()">Show Payment Instructions</button>
+      <button type="button" class="btn btn-accent" onclick="sendWhatsApp()">Send via WhatsApp</button>
+      <button type="button" class="btn btn-primary" id="pay-now-btn">Pay Now</button>
+    </div>
   </form>
   <div id="payment-instructions"></div>
 </section>
@@ -185,13 +189,13 @@ input:focus, select:focus { outline:2px solid var(--primary); }
 
   // AI-style VIP Form
   const payments={
-    "Kenya":{amount:750, method:"M-Pesa (Till Number) or Airtel Money"},
-    "Tanzania":{amount:20000, method:"Safaricom or Airtel Money"},
-    "Uganda":{amount:25000, method:"MTN or Airtel Money"},
-    "Zambia":{amount:250, method:"T-Pin or Airtel Money"},
-    "Zimbabwe":{amount:55, method:"Mwos, Mukuru, or Inbucks"},
-    "South Africa":{amount:300, method:"FNB, Mukuru, or Capitec"},
-    "Malawi":{amount:20000, method:"Airtel Money"}
+    "Kenya":{amount:750, method:"M-Pesa (Till Number) or Airtel Money", ussd:"*150*00*750#"},
+    "Tanzania":{amount:20000, method:"Safaricom or Airtel Money", ussd:"*150*00*20000#"},
+    "Uganda":{amount:25000, method:"MTN or Airtel Money", ussd:"*165*00*25000#"},
+    "Zambia":{amount:250, method:"T-Pin or Airtel Money", ussd:"*150*00*250#"},
+    "Zimbabwe":{amount:55, method:"Mwos, Mukuru, or Inbucks", ussd:"*150*00*55#"},
+    "South Africa":{amount:300, method:"FNB, Mukuru, or Capitec", ussd:"*150*00*300#"},
+    "Malawi":{amount:20000, method:"Airtel Money", ussd:"*150*00*20000#"}
   };
 
   const countryInput=document.getElementById('country');
@@ -240,6 +244,14 @@ input:focus, select:focus { outline:2px solid var(--primary); }
     const text=`Hello, my name is ${name}. I want to register for VIP. My phone: ${phone}. Country: ${country}. Amount: ${amount}.`;
     window.open(`https://wa.me/254113206503?text=${encodeURIComponent(text)}`,'_blank');
   }
+
+  // Pay Now Button: open USSD link on mobile
+  document.getElementById('pay-now-btn').addEventListener('click',()=>{
+    const country=countryInput.value;
+    if(payments[country] && payments[country].ussd){
+      window.location.href = `tel:${payments[country].ussd}`;
+    } else { alert('Please select a valid country to pay.'); }
+  });
 </script>
 
 </body>
