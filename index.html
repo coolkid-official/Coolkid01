@@ -64,7 +64,7 @@
   form { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; }
   input, select { padding:12px 15px; border-radius:var(--radius); border:none; background:#222; color:#fff; font-size:1rem; }
   input:focus, select:focus { outline:2px solid var(--primary); }
-  #payment-instructions { background:#222; padding:15px; border-radius:var(--radius); margin-top:10px; color:#25d366; }
+  #payment-instructions { background:#222; padding:15px; border-radius:var(--radius); margin-top:10px; color:#25d366; font-weight:bold; }
 </style>
 </head>
 
@@ -147,7 +147,7 @@
     </p>
   </section>
 
-  <!-- New VIP Form Section -->
+  <!-- VIP Form Section -->
   <section class="section">
     <h2>VIP Registration Form</h2>
     <form id="vip-form">
@@ -170,7 +170,6 @@
     <div id="payment-instructions"></div>
   </section>
 
-  <!-- Contact Buttons -->
   <section class="section" style="text-align:center;">
     <a class="btn btn-primary" href="https://wa.me/254113206503">CONTACT WHATSAPP</a>
     <a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
@@ -228,32 +227,44 @@
   // Auto Scroll Hint
   setTimeout(()=>{ window.scrollTo({ top: innerHeight*0.6, behavior:"smooth" }); },1500);
 
-  // Payment Instructions
+  // Payment and AI-style prediction
   const payments = {
-    "Kenya":"Pay Ksh via M-Pesa (Till Number) or Airtel Money",
-    "Tanzania":"Pay TZS via Safaricom or Airtel Money",
-    "Uganda":"Pay UGX via MTN or Airtel Money",
-    "Zambia":"Pay ZMW via T-Pin or Airtel Money",
-    "Zimbabwe":"Pay USD via Mwos, Mukuru, or Inbucks",
-    "South Africa":"Pay R via FNB, Mukuru, or Capitec",
-    "Malawi":"Pay MWK via Airtel Money"
+    "Kenya": {amount: 750, method:"M-Pesa (Till Number) or Airtel Money"},
+    "Tanzania": {amount: 20000, method:"Safaricom or Airtel Money"},
+    "Uganda": {amount: 25000, method:"MTN or Airtel Money"},
+    "Zambia": {amount: 250, method:"T-Pin or Airtel Money"},
+    "Zimbabwe": {amount: 55, method:"Mwos, Mukuru, or Inbucks"},
+    "South Africa": {amount: 300, method:"FNB, Mukuru, or Capitec"},
+    "Malawi": {amount: 20000, method:"Airtel Money"}
   };
 
+  const countryInput = document.getElementById('country');
+  const amountInput = document.getElementById('amount');
+
+  countryInput.addEventListener('change', ()=>{
+    const country = countryInput.value;
+    if(country && payments[country]){
+      // AI-style auto fill amount
+      amountInput.value = payments[country].amount;
+      showPaymentInstructions();
+    }
+  });
+
   function showPaymentInstructions(){
-    const country = document.getElementById('country').value;
+    const country = countryInput.value;
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-    const amount = document.getElementById('amount').value;
-    if(!country || !name || !phone || !amount){ alert('Please fill all fields'); return; }
-    const instructions = `Hello ${name}, please pay ${amount} via ${payments[country]}. After payment, contact us on WhatsApp to confirm.`;
+    const amount = amountInput.value;
+    if(!country || !name || !phone || !amount){ document.getElementById('payment-instructions').innerText = ''; return; }
+    const instructions = `Hello ${name}, please pay ${amount} via ${payments[country].method}. After payment, contact us on WhatsApp to confirm.`;
     document.getElementById('payment-instructions').innerText = instructions;
   }
 
   function sendWhatsApp(){
-    const country = document.getElementById('country').value;
+    const country = countryInput.value;
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-    const amount = document.getElementById('amount').value;
+    const amount = amountInput.value;
     if(!country || !name || !phone || !amount){ alert('Please fill all fields'); return; }
     const text = `Hello, my name is ${name}. I want to register for VIP. My phone: ${phone}. Country: ${country}. Amount: ${amount}.`;
     window.open(`https://wa.me/254113206503?text=${encodeURIComponent(text)}`, '_blank');
@@ -261,4 +272,4 @@
 </script>
 
 </body>
-</html>
+  </html>
