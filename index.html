@@ -273,6 +273,9 @@
 
 <main class="container">
 
+<!-- ====================== -->
+<!-- TIMER UPGRADE -->
+<!-- ====================== -->
 <section class="section">
   <h2>🔥 VIP Offer Countdown</h2>
   <p style="text-align:center;font-size:1.4rem;margin-top:10px;color:#25d366;">
@@ -280,6 +283,7 @@
   </p>
 </section>
 
+<!-- RESTORED SECTIONS -->
 <section class="section">
   <h2>About Elite VIP</h2>
   <ul>
@@ -291,10 +295,19 @@
 </section>
 
 <section class="section">
+  <h2>Why Choose Us</h2>
+  <ul>
+    <li>1200+ verified VIP members</li>
+    <li>3500+ historical match insights shared</li>
+    <li>Members across 15+ countries</li>
+    <li>Private, secure & controlled registration</li>
+  </ul>
+</section>
+
+<!-- AUDIO -->
+<section class="section">
   <h2>VIP Audio Briefing</h2>
-  <p style="text-align:center;color:#ccc;">
-    Tap play to hear a short introduction about our VIP service
-  </p>
+  <p style="text-align:center;color:#ccc;">Tap play to hear a short introduction about our VIP service</p>
 
   <div style="text-align:center;">
     <button id="playAudio" class="btn btn-primary">▶ Play Audio</button>
@@ -307,10 +320,21 @@
   </audio>
 </section>
 
+<!-- REGISTRATION STEPS -->
+<section class="section">
+  <h2>Registration Steps</h2>
+  <ol>
+    <li>Contact us via WhatsApp or Telegram</li>
+    <li>Submit basic registration details</li>
+    <li>Complete one-time VIP registration fee</li>
+    <li>Receive verified VIP access confirmation</li>
+  </ol>
+</section>
+
+<!-- FEES & METHODS + NEW COUNTRY DROPDOWN -->
 <section class="section">
   <h2>Registration Fees & Payment Methods</h2>
 
-  <!-- NEW LIVE DROPDOWN -->
   <select id="countrySelect" style="padding:12px;width:100%;border-radius:var(--radius);margin-bottom:20px;">
     <option value="">Select Your Country</option>
     <option value="Ksh 750">Kenya</option>
@@ -340,6 +364,54 @@
   </table>
 </section>
 
+<!-- RESTORED KENYA + UGANDA PAYMENT -->
+<section class="section">
+  <h2>Official Payment Instructions</h2>
+
+  <h3 style="color:#25d366;">🇰🇪 Kenya – M-Pesa</h3>
+  <ul>
+    <li><strong>Phone Number:</strong> 0711 949 099</li>
+    <li><strong>Account Name:</strong> BRIAN K.</li>
+    <li><strong>Amount:</strong> Ksh 750</li>
+    <li><strong>Purpose:</strong> VIP Registration Fee</li>
+  </ul>
+
+  <p>Once payment is completed, kindly send the confirmation message or screenshot via WhatsApp for immediate verification and activation.</p>
+
+  <h3 style="color:#25d366;margin-top:25px;">🇺🇬 Uganda – MTN Mobile Money</h3>
+  <ol>
+    <li>Dial <strong>*165#</strong></li>
+    <li>Select <strong>Send Money</strong></li>
+    <li>Choose <strong>Africa Countries</strong></li>
+    <li>Select <strong>East Africa</strong></li>
+    <li>Choose <strong>Kenya</strong></li>
+    <li>Select <strong>Safaricom M-Pesa</strong></li>
+    <li>Enter Number: <strong>254711949382</strong></li>
+    <li>Enter Amount: <strong>UGX 25,000</strong></li>
+    <li>Confirm with MTN PIN</li>
+  </ol>
+
+  <p style="color:#ffaa00;margin-top:15px;">
+    🌍 If your country is not listed, please contact us via WhatsApp and we will assist you instantly.
+  </p>
+</section>
+
+<!-- RESTORED RULES -->
+<section class="section">
+  <h2>VIP Rules, Trust & Legal Notice</h2>
+  <ul>
+    <li>VIP access is confidential & non-transferable</li>
+    <li>No refunds after VIP activation</li>
+    <li>No free content after registration</li>
+    <li>Members must follow stake guidance responsibly</li>
+  </ul>
+
+  <p style="color:#ff7777;margin-top:15px;">
+    ⚠ Elite VIP does not guarantee profits. Information is for analytical purposes only.
+  </p>
+</section>
+
+<!-- RESTORED BUTTONS -->
 <section class="section" style="text-align:center;">
   <a class="btn btn-primary whatsapp-track" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
   <a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
@@ -356,9 +428,7 @@
 </div>
 
 <script>
-/* ==============================
-   PARTICLE ANIMATION
-============================== */
+/* PARTICLES */
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
@@ -387,16 +457,12 @@ function animate(){
 }
 animate();
 
-/* ==============================
-   AUDIO PLAYER
-============================== */
+/* AUDIO */
 const audio = document.getElementById("vipAudio");
 document.getElementById("playAudio").onclick = () => audio.play();
 document.getElementById("pauseAudio").onclick = () => audio.pause();
 
-/* ==============================
-   URGENCY TIMER
-============================== */
+/* TIMER */
 function updateTimer(){
   const end = new Date().getTime() + 86400000;
   setInterval(()=>{
@@ -410,15 +476,13 @@ function updateTimer(){
 }
 updateTimer();
 
-/* ==============================
-   LIVE COUNTRY SELECT
-============================== */
+/* COUNTRY FEE DROPDOWN */
 document.getElementById("countrySelect").onchange = (e)=>{
   document.getElementById("countryResult").textContent =
     e.target.value ? `VIP Fee: ${e.target.value}` : "";
 };
 
-/* POPUP FOR WHATSAPP */
+/* WHATSAPP POPUP */
 document.querySelectorAll(".whatsapp-track").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.getElementById("popup").style.display="block";
@@ -428,4 +492,4 @@ document.querySelectorAll(".whatsapp-track").forEach(btn=>{
 </script>
 
 </body>
-</html>
+  </html>
