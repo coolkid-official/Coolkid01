@@ -265,7 +265,6 @@
 
 <section class="section">
   <h2>Registration Fees & Payment Methods</h2>
-
   <table>
     <tr>
       <th>Country</th>
@@ -282,29 +281,23 @@
   </table>
 </section>
 
-<!-- ✅ NEW EXTENDED PAYMENT DETAILS SECTION -->
 <section class="section">
   <h2>Official Payment Instructions</h2>
 
-  <p>
-    To ensure a smooth and secure VIP activation, kindly follow the payment instructions below
-    according to your country. Please ensure all details are entered correctly.
-  </p>
-
-  <h3 style="margin-top:25px;color:#25d366;">🇰🇪 Kenya – M-Pesa Payment</h3>
+  <h3 style="color:#25d366;">🇰🇪 Kenya – M-Pesa</h3>
   <ul>
-    <li><strong>Phone Number:</strong> 0705 984 099</li>
+    <li><strong>Phone Number:</strong> 0711 949 099</li>
     <li><strong>Account Name:</strong> BRIAN K.</li>
     <li><strong>Amount:</strong> Ksh 750</li>
     <li><strong>Purpose:</strong> VIP Registration Fee</li>
   </ul>
 
-  <p style="margin-top:10px;">
-    After completing the payment, kindly send the M-Pesa confirmation message or a clear screenshot
-    via WhatsApp for immediate verification and VIP activation.
+  <p>
+    Once payment is completed, kindly send the confirmation message or screenshot via WhatsApp
+    for immediate verification and activation.
   </p>
 
-  <h3 style="margin-top:30px;color:#25d366;">🇺🇬 Uganda – MTN Mobile Money (Sending to Kenya)</h3>
+  <h3 style="color:#25d366;margin-top:25px;">🇺🇬 Uganda – MTN Mobile Money</h3>
   <ol>
     <li>Dial <strong>*165#</strong></li>
     <li>Select <strong>Send Money</strong></li>
@@ -314,18 +307,11 @@
     <li>Select <strong>Safaricom M-Pesa</strong></li>
     <li>Enter Number: <strong>254711949382</strong></li>
     <li>Enter Amount: <strong>UGX 25,000</strong></li>
-    <li>Confirm with your MTN PIN and send</li>
+    <li>Confirm with MTN PIN</li>
   </ol>
 
-  <p style="margin-top:10px;">
-    <strong>Recipient Name:</strong> BRIAN K.<br>
-    Once payment is successful, please send the confirmation message or screenshot
-    for prompt VIP approval.
-  </p>
-
-  <p style="margin-top:20px;color:#ffaa00;">
-    🌍 If you do not see your country listed above, kindly contact us directly on WhatsApp.
-    Our support team will immediately provide you with the correct payment instructions.
+  <p style="color:#ffaa00;margin-top:15px;">
+    🌍 If your country is not listed, please contact us via WhatsApp and we will assist you instantly.
   </p>
 </section>
 
@@ -344,7 +330,7 @@
 </section>
 
 <section class="section" style="text-align:center;">
-  <a class="btn btn-primary" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
+  <a class="btn btn-primary whatsapp-track" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
   <a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
 </section>
 
@@ -355,19 +341,15 @@
 </footer>
 
 <div class="mobile-cta">
-  <a href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
+  <a class="whatsapp-track" href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
 </div>
 
 <script>
+  // Particle animation
   const canvas = document.getElementById("particle-canvas");
   const ctx = canvas.getContext("2d");
-
-  function resize() {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-  }
-  resize();
-  addEventListener("resize", resize);
+  function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
+  resize(); addEventListener("resize", resize);
 
   const particles = Array.from({length:80},()=>({
     x:Math.random()*canvas.width,
@@ -392,9 +374,17 @@
   }
   animate();
 
+  // Audio
   const audio = document.getElementById("vipAudio");
   document.getElementById("playAudio").onclick = () => audio.play();
   document.getElementById("pauseAudio").onclick = () => audio.pause();
+
+  // WhatsApp Click Tracking (non-intrusive)
+  document.querySelectorAll(".whatsapp-track").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      console.log("WhatsApp CTA clicked:", new Date().toISOString());
+    });
+  });
 
   setTimeout(()=>{
     window.scrollTo({ top: innerHeight*0.6, behavior:"smooth" });
