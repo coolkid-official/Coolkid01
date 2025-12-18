@@ -35,10 +35,18 @@
       overflow-x: hidden;
     }
 
+    #particle-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
     header.hero {
       text-align: center;
       padding: 100px 20px;
       border-bottom: 3px solid var(--primary);
+      position: relative;
+      z-index: 1;
     }
 
     .profile-img {
@@ -48,7 +56,7 @@
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid var(--primary);
-      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 0 30px rgba(37,211,102,0.6);
       margin-bottom: 25px;
     }
 
@@ -72,10 +80,23 @@
       color: var(--text-light);
     }
 
+    .scroll-hint {
+      margin-top: 30px;
+      font-size: 2rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 40px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .section {
@@ -92,10 +113,37 @@
       margin-bottom: 20px;
     }
 
+    .section p,
     .section li {
       color: var(--text-light);
       margin-top: 8px;
     }
+
+    ul, ol { margin-left: 20px; }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 10px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn:hover { transform: scale(1.08); }
 
     table {
       width: 100%;
@@ -114,109 +162,176 @@
       color: #000;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 15px 35px;
-      border-radius: var(--radius);
-      font-size: 1.1rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #000;
-      text-decoration: none;
-      margin-top: 15px;
-    }
-
     footer {
       text-align: center;
       padding: 25px;
       color: var(--text-light);
-      font-size: .9rem;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width:600px) {
+      header h1 { font-size: 2.2rem; }
+
+      .mobile-cta {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: var(--primary);
+        text-align: center;
+        padding: 15px;
+        z-index: 999;
+      }
+
+      .mobile-cta a {
+        font-weight: bold;
+        color: #000;
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<canvas id="particle-canvas"></canvas>
+
 <header class="hero">
   <div class="profile-img">
     <img src="profile.jpg" alt="Elite VIP Profile">
   </div>
+
   <h1>Elite <span>VIP Fixed Matches</span></h1>
   <p>Official VIP registration platform offering structured insights for disciplined members.</p>
+
+  <div class="scroll-hint">👇👇</div>
 </header>
 
 <main class="container">
 
-<!-- AUDIO SECTION RESTORED -->
 <section class="section">
-  <h2>🎧 Official VIP Audio Message</h2>
-  <p>Please listen carefully before making payment:</p>
-  <audio controls style="width:100%;margin-top:15px;">
-    <source src="vip-audio.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+  <h2>About Elite VIP</h2>
+  <ul>
+    <li>Professionally analyzed match insights</li>
+    <li>Verified VIP-only private access</li>
+    <li>Structured bankroll & stake guidance</li>
+    <li>Direct WhatsApp & Telegram support</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <ul>
+    <li>1200+ verified VIP members</li>
+    <li>3500+ historical match insights shared</li>
+    <li>Members across 15+ countries</li>
+    <li>Private, secure & controlled registration</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>VIP Audio Briefing</h2>
+  <p style="text-align:center;color:#ccc;">
+    Tap play to hear a short introduction about our VIP service
+  </p>
+
+  <div style="text-align:center;">
+    <button id="playAudio" class="btn btn-primary">▶ Play Audio</button>
+    <button id="pauseAudio" class="btn btn-accent">⏸ Pause</button>
+  </div>
+
+  <audio id="vipAudio">
+    <source src="vip-intro.mp3" type="audio/mpeg">
+    Your browser does not support audio.
   </audio>
 </section>
 
 <section class="section">
-  <h2>Registration Fees & Countries</h2>
+  <h2>Registration Steps</h2>
+  <ol>
+    <li>Contact us via WhatsApp or Telegram</li>
+    <li>Submit basic registration details</li>
+    <li>Complete one-time VIP registration fee</li>
+    <li>Receive verified VIP access confirmation</li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2>Registration Fees & Payment Methods</h2>
   <table>
     <tr>
       <th>Country</th>
       <th>Fee</th>
-      <th>Payment Method</th>
+      <th>Payment Methods</th>
     </tr>
-    <tr>
-      <td>Kenya</td>
-      <td>Ksh 750</td>
-      <td>M-Pesa</td>
-    </tr>
-    <tr>
-      <td>Uganda</td>
-      <td>UGX 25,000</td>
-      <td>MTN / Airtel</td>
-    </tr>
-    <tr>
-      <td>Tanzania</td>
-      <td>TZS 20,000</td>
-      <td>Airtel Money</td>
-    </tr>
-    <tr>
-      <td>Nigeria</td>
-      <td>₦10,000</td>
-      <td>OPay</td>
-    </tr>
-    <tr>
-      <td>Botswana</td>
-      <td>BWP 120</td>
-      <td>Orange Money</td>
-    </tr>
-    <tr>
-      <td>Zimbabwe</td>
-      <td>USD 10</td>
-      <td>EcoCash</td>
-    </tr>
+    <tr><td>Kenya</td><td>Ksh 750</td><td>M-Pesa • Till Number • Airtel Money</td></tr>
+    <tr><td>Tanzania</td><td>TZS 20,000</td><td>Safaricom • Airtel Money</td></tr>
+    <tr><td>Uganda</td><td>UGX 25,000</td><td>MTN • Airtel Money</td></tr>
+    <tr><td>Zambia</td><td>ZMW 250</td><td>T-Pin • Airtel Money</td></tr>
+    <tr><td>Zimbabwe</td><td>USD 55</td><td>Mwos • Mukuru • Inbucks</td></tr>
+    <tr><td>South Africa</td><td>R 300</td><td>FNB • Mukuru • Capitec</td></tr>
+    <tr><td>Malawi</td><td>MWK 20,000</td><td>Airtel Money</td></tr>
   </table>
 </section>
 
-<!-- UGANDA MTN PROCESS RESTORED -->
 <section class="section">
-  <h2>🇺🇬 Uganda – MTN Mobile Money Payment Procedure</h2>
+  <h2>Official Payment Instructions</h2>
+
+  <h3 style="color:#25d366;">🇰🇪 Kenya – M-Pesa</h3>
+  <ul>
+    <li><strong>Phone Number:</strong> 0711 949 099</li>
+    <li><strong>Account Name:</strong> BRIAN K.</li>
+    <li><strong>Amount:</strong> Ksh 750</li>
+    <li><strong>Purpose:</strong> VIP Registration Fee</li>
+  </ul>
+
+  <p>
+    Once payment is completed, kindly send the confirmation message or screenshot via WhatsApp
+    for immediate verification and activation.
+  </p>
+
+  <h3 style="color:#25d366;margin-top:25px;">🇺🇬 Uganda – MTN Mobile Money</h3>
   <ol>
     <li>Dial <strong>*165#</strong></li>
     <li>Select <strong>Send Money</strong></li>
-    <li>Select <strong>Mobile Number</strong></li>
-    <li>Enter the provided MTN number</li>
-    <li>Enter <strong>UGX 25,000</strong></li>
-    <li>Confirm with your MTN PIN</li>
-    <li>Take screenshot of confirmation message</li>
-    <li>Send screenshot on WhatsApp for verification</li>
+    <li>Choose <strong>Africa Countries</strong></li>
+    <li>Select <strong>East Africa</strong></li>
+    <li>Choose <strong>Kenya</strong></li>
+    <li>Select <strong>Safaricom M-Pesa</strong></li>
+    <li>Enter Number: <strong>254711949382</strong></li>
+    <li>Enter Amount: <strong>UGX 25,000</strong></li>
+    <li>Confirm with MTN PIN</li>
   </ol>
+
+  <p style="color:#ffaa00;margin-top:15px;">
+    🌍 If your country is not listed, please contact us via WhatsApp and we will assist you instantly.
+  </p>
+</section>
+
+<section class="section">
+  <h2>VIP Rules, Trust & Legal Notice</h2>
+  <ul>
+    <li>VIP access is confidential & non-transferable</li>
+    <li>No refunds after VIP activation</li>
+    <li>No free content after registration</li>
+    <li>Members must follow stake guidance responsibly</li>
+  </ul>
+
+  <p style="color:#ff7777;margin-top:15px;">
+    ⚠ Elite VIP does not guarantee profits. Information is for analytical purposes only.
+  </p>
 </section>
 
 <section class="section" style="text-align:center;">
-  <a class="btn" href="https://wa.me/254113206503">
-    REGISTER & CONFIRM VIA WHATSAPP
-  </a>
+  <a class="btn btn-primary whatsapp-track" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
+  <a class="btn btn-accent" href="https://t.me/coolkidtips" target="_blank">JOIN TELEGRAM</a>
 </section>
 
 </main>
@@ -224,6 +339,57 @@
 <footer>
   © 2025 Elite VIP Fixed Matches. All Rights Reserved.
 </footer>
+
+<div class="mobile-cta">
+  <a class="whatsapp-track" href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
+</div>
+
+<script>
+  // Particle animation
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
+  resize(); addEventListener("resize", resize);
+
+  const particles = Array.from({length:80},()=>({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2+1,
+    dx:(Math.random()-0.5)*0.5,
+    dy:(Math.random()-0.5)*0.5
+  }));
+
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle="rgba(37,211,102,0.3)";
+      ctx.fill();
+      p.x+=p.dx; p.y+=p.dy;
+      if(p.x<0||p.x>canvas.width) p.dx*=-1;
+      if(p.y<0||p.y>canvas.height) p.dy*=-1;
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Audio
+  const audio = document.getElementById("vipAudio");
+  document.getElementById("playAudio").onclick = () => audio.play();
+  document.getElementById("pauseAudio").onclick = () => audio.pause();
+
+  // WhatsApp Click Tracking (non-intrusive)
+  document.querySelectorAll(".whatsapp-track").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      console.log("WhatsApp CTA clicked:", new Date().toISOString());
+    });
+  });
+
+  setTimeout(()=>{
+    window.scrollTo({ top: innerHeight*0.6, behavior:"smooth" });
+  },1500);
+</script>
 
 </body>
 </html>
