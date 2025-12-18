@@ -21,82 +21,121 @@
       --radius: 14px;
     }
 
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body {background:var(--dark);color:var(--light);line-height:1.6;overflow-x:hidden;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-    #particle-canvas {position:fixed;inset:0;z-index:0;}
+    body {
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
     header.hero {
-      text-align:center;
-      padding:100px 20px;
-      border-bottom:3px solid var(--primary);
-      position:relative;
-      z-index:1;
+      text-align: center;
+      padding: 100px 20px;
+      border-bottom: 3px solid var(--primary);
     }
 
     .profile-img {
-      width:160px;height:160px;margin:auto;border-radius:50%;
-      overflow:hidden;border:4px solid var(--primary);
-      box-shadow:0 0 30px rgba(37,211,102,0.6);
-      margin-bottom:25px;
+      width: 160px;
+      height: 160px;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+      margin-bottom: 25px;
     }
 
-    .profile-img img {width:100%;height:100%;object-fit:cover;}
-    header h1 {font-size:3rem;}
-    header h1 span {color:var(--primary);}
-    header p {max-width:800px;margin:15px auto 0;color:var(--text-light);}
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-    .scroll-hint {margin-top:30px;font-size:2rem;animation:bounce 1.5s infinite;}
-    @keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(12px);}}
+    header h1 {
+      font-size: 3rem;
+    }
 
-    .container {max-width:1100px;margin:auto;padding:40px 20px;position:relative;z-index:1;}
+    header h1 span {
+      color: var(--primary);
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 15px auto 0;
+      color: var(--text-light);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
     .section {
-      background:var(--bg-section);
-      padding:40px 30px;
-      margin:40px 0;
-      border-radius:var(--radius);
-      box-shadow:0 0 15px rgba(0,0,0,0.4);
+      background: var(--bg-section);
+      padding: 40px 30px;
+      margin: 40px 0;
+      border-radius: var(--radius);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
-    .section h2 {text-align:center;font-size:2.2rem;margin-bottom:20px;}
-    .section p,.section li {color:var(--text-light);margin-top:8px;}
-    ul,ol {margin-left:20px;}
+    .section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .section li {
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    th {
+      background: var(--primary);
+      color: #000;
+    }
 
     .btn {
-      display:inline-block;padding:15px 35px;border-radius:var(--radius);
-      font-size:1.1rem;font-weight:600;margin:10px;transition:.3s;
-      border:none;cursor:pointer;position:relative;overflow:hidden;
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--primary);
+      color: #000;
+      text-decoration: none;
+      margin-top: 15px;
     }
 
-    .btn-primary {background:var(--primary);color:#000;}
-    .btn-accent {background:var(--accent);color:#fff;}
-    .btn:hover {transform:scale(1.08);}
-
-    table {width:100%;border-collapse:collapse;margin-top:20px;}
-    th,td {padding:12px;border:1px solid #333;text-align:center;}
-    th {background:var(--primary);color:#000;}
-
-    footer {text-align:center;padding:25px;color:var(--text-light);font-size:.9rem;}
-
-    .mobile-cta {
-      display:none;
-      position:fixed;bottom:0;width:100%;
-      background:var(--primary);text-align:center;
-      padding:15px;z-index:999;
-    }
-
-    .mobile-cta a {font-weight:bold;color:#000;font-size:1.2rem;text-decoration:none;}
-
-    @media(max-width:600px){
-      header h1{font-size:2.2rem;}
-      .mobile-cta{display:block;}
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--text-light);
+      font-size: .9rem;
     }
   </style>
 </head>
 
 <body>
-
-<canvas id="particle-canvas"></canvas>
 
 <header class="hero">
   <div class="profile-img">
@@ -104,79 +143,80 @@
   </div>
   <h1>Elite <span>VIP Fixed Matches</span></h1>
   <p>Official VIP registration platform offering structured insights for disciplined members.</p>
-  <div class="scroll-hint">👇👇</div>
 </header>
 
 <main class="container">
 
+<!-- AUDIO SECTION RESTORED -->
 <section class="section">
-  <h2>About Elite VIP</h2>
-  <ul>
-    <li>Professionally analyzed match insights</li>
-    <li>Verified VIP-only private access</li>
-    <li>Structured bankroll & stake guidance</li>
-    <li>Direct WhatsApp & Telegram support</li>
-  </ul>
+  <h2>🎧 Official VIP Audio Message</h2>
+  <p>Please listen carefully before making payment:</p>
+  <audio controls style="width:100%;margin-top:15px;">
+    <source src="vip-audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </section>
 
 <section class="section">
-  <h2>Why Choose Us</h2>
-  <ul>
-    <li>1200+ verified VIP members</li>
-    <li>3500+ historical match insights shared</li>
-    <li>Members across 15+ countries</li>
-    <li>Private, secure & controlled registration</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Registration & More Information</h2>
-  <ul>
-    <li>Registration is a one-time process for VIP access</li>
-    <li>Payment confirms seriousness and activates verification</li>
-    <li>VIP access is granted immediately after confirmation</li>
-    <li>Access is private, secure, and non-transferable</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Registration Fees & Payment Methods</h2>
+  <h2>Registration Fees & Countries</h2>
   <table>
-    <tr><th>Country</th><th>Fee</th><th>Payment Methods</th></tr>
-    <tr><td>Kenya</td><td>Ksh 750</td><td>M-Pesa • Airtel Money</td></tr>
-    <tr><td>Tanzania</td><td>TZS 20,000</td><td>Airtel Money</td></tr>
-    <tr><td>Uganda</td><td>UGX 25,000</td><td>MTN • Airtel Money</td></tr>
-    <tr><td>Nigeria</td><td>₦10,000</td><td>OPay</td></tr>
+    <tr>
+      <th>Country</th>
+      <th>Fee</th>
+      <th>Payment Method</th>
+    </tr>
+    <tr>
+      <td>Kenya</td>
+      <td>Ksh 750</td>
+      <td>M-Pesa</td>
+    </tr>
+    <tr>
+      <td>Uganda</td>
+      <td>UGX 25,000</td>
+      <td>MTN / Airtel</td>
+    </tr>
+    <tr>
+      <td>Tanzania</td>
+      <td>TZS 20,000</td>
+      <td>Airtel Money</td>
+    </tr>
+    <tr>
+      <td>Nigeria</td>
+      <td>₦10,000</td>
+      <td>OPay</td>
+    </tr>
+    <tr>
+      <td>Botswana</td>
+      <td>BWP 120</td>
+      <td>Orange Money</td>
+    </tr>
+    <tr>
+      <td>Zimbabwe</td>
+      <td>USD 10</td>
+      <td>EcoCash</td>
+    </tr>
   </table>
 </section>
 
+<!-- UGANDA MTN PROCESS RESTORED -->
 <section class="section">
-  <h2>Official Payment Instructions</h2>
-
-  <h3 style="color:#25d366;">🇰🇪 Kenya – M-Pesa</h3>
-  <ul>
-    <li><strong>Phone:</strong> 0711949382</li>
-    <li><strong>Name:</strong> BRIAN K.</li>
-    <li><strong>Amount:</strong> Ksh 750</li>
-  </ul>
-
-  <h3 style="color:#25d366;margin-top:25px;">🇺🇬 Uganda – Mobile Money</h3>
-  <ul>
-    <li><strong>Networks:</strong> MTN • Airtel Money</li>
-    <li><strong>Recipient Name:</strong> BRIAN K.</li>
-    <li><strong>Amount:</strong> UGX 25,000</li>
-  </ul>
-
-  <h3 style="color:#25d366;margin-top:25px;">🇳🇬 Nigeria – OPay</h3>
-  <ul>
-    <li><strong>Bank:</strong> OPay</li>
-    <li><strong>Account Name:</strong> BRIAN K.</li>
-    <li><strong>Amount:</strong> ₦10,000</li>
-  </ul>
+  <h2>🇺🇬 Uganda – MTN Mobile Money Payment Procedure</h2>
+  <ol>
+    <li>Dial <strong>*165#</strong></li>
+    <li>Select <strong>Send Money</strong></li>
+    <li>Select <strong>Mobile Number</strong></li>
+    <li>Enter the provided MTN number</li>
+    <li>Enter <strong>UGX 25,000</strong></li>
+    <li>Confirm with your MTN PIN</li>
+    <li>Take screenshot of confirmation message</li>
+    <li>Send screenshot on WhatsApp for verification</li>
+  </ol>
 </section>
 
 <section class="section" style="text-align:center;">
-  <a class="btn btn-primary" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
+  <a class="btn" href="https://wa.me/254113206503">
+    REGISTER & CONFIRM VIA WHATSAPP
+  </a>
 </section>
 
 </main>
@@ -184,10 +224,6 @@
 <footer>
   © 2025 Elite VIP Fixed Matches. All Rights Reserved.
 </footer>
-
-<div class="mobile-cta">
-  <a href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
-</div>
 
 </body>
 </html>
