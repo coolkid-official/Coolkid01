@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elite Pro Insights | Verified Football Predictions</title>
-  <meta name="description" content="Join Elite Pro Insights for professionally analyzed football predictions and exclusive member resources. Data-driven approach for informed decision making." />
+  <title>CoolKid Tips | Elite Football Predictions</title>
+  <meta name="description" content="Join CoolKid Tips for professionally analyzed football predictions and exclusive member resources. Data-driven approach for informed decision making. Founded by Cool Kid." />
 
   <!-- Favicon -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
@@ -13,13 +13,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@600;800&family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!-- SEO & Social Meta Tags -->
-  <meta name="author" content="Elite Pro Insights" />
-  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data, football odds" />
-  <meta property="og:title" content="Elite Pro Insights | Premium Football Analysis" />
-  <meta property="og:description" content="Access professionally analyzed football insights and exclusive member resources." />
+  <meta name="author" content="CoolKid Tips" />
+  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data, football odds, Cool Kid, CoolKid Tips, fixed matches, sure bets, betting strategy" />
+  <meta property="og:title" content="CoolKid Tips | Elite Football Predictions" />
+  <meta property="og:description" content="Access professionally analyzed football insights from Cool Kid's exclusive community." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elitproinsights.example.com" />
-  <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/25d366?text=Elite+Pro+Insights" />
+  <meta property="og:url" content="https://coolkidtips.example.com" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/25d366?text=CoolKid+Tips" />
 
   <style>
     :root {
@@ -40,6 +40,7 @@
       --gray-800: #1a1a1a;
       --gray-900: #0d0d0d;
       --gray-700: #2a2a2a;
+      --gray-600: #3a3a3a;
       
       /* Spacing & Sizing */
       --border-radius: 14px;
@@ -466,6 +467,12 @@
         min-width: auto;
         padding: 10px 20px;
         font-size: 0.95rem;
+    }
+
+    .btn-xs {
+        min-width: auto;
+        padding: 8px 15px;
+        font-size: 0.85rem;
     }
 
     /* Table Styles */
@@ -1078,6 +1085,456 @@
         color: var(--primary-green);
     }
 
+    /* Team Section */
+    .team-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .team-member {
+        text-align: center;
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 30px;
+        border: 1px solid var(--dark-panel-border);
+        transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    .member-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid var(--primary-green);
+        margin: 0 auto 20px;
+        overflow: hidden;
+    }
+
+    .member-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .member-name {
+        font-size: 1.4rem;
+        color: var(--primary-green);
+        margin-bottom: 10px;
+    }
+
+    .member-role {
+        font-size: 1.1rem;
+        color: var(--accent-blue);
+        margin-bottom: 15px;
+    }
+
+    .member-bio {
+        color: var(--light-text-secondary);
+    }
+
+    /* Testimonials Grid */
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 25px;
+        border: 1px solid var(--dark-panel-border);
+        box-shadow: var(--shadow-panel);
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .testimonial-card p {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--light-text-secondary);
+    }
+
+    .testimonial-card .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-green);
+        text-align: right;
+    }
+
+    .testimonial-card .testimonial-country {
+        font-size: 0.9rem;
+        color: var(--light-text-tertiary);
+        text-align: right;
+    }
+
+    /* Pricing Tier Section */
+    .pricing-tiers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .pricing-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 40px 30px;
+        text-align: center;
+        border: 1px solid var(--dark-panel-border);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pricing-card.popular {
+        border-color: var(--primary-green);
+        transform: scale(1.05);
+        z-index: 10;
+    }
+
+    .pricing-card.popular::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background: var(--primary-green);
+        color: black;
+        padding: 5px 30px;
+        transform: rotate(45deg);
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .pricing-card h3 {
+        color: var(--primary-green);
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .pricing-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--light-text);
+        margin-bottom: 20px;
+    }
+
+    .pricing-price span {
+        font-size: 1rem;
+        color: var(--light-text-tertiary);
+    }
+
+    .pricing-features {
+        list-style: none;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .pricing-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--dark-panel-border);
+        color: var(--light-text-secondary);
+    }
+
+    .pricing-features li:last-child {
+        border-bottom: none;
+    }
+
+    /* Stats Section */
+    .stats-overview {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .stats-overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .stat-overview-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 30px;
+        text-align: center;
+        border: 1px solid var(--dark-panel-border);
+        transition: transform 0.3s ease;
+    }
+
+    .stat-overview-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-overview-icon {
+        font-size: 2.5rem;
+        color: var(--primary-green);
+        margin-bottom: 15px;
+    }
+
+    .stat-overview-value {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--light-text);
+        margin-bottom: 10px;
+    }
+
+    .stat-overview-label {
+        font-size: 1rem;
+        color: var(--light-text-tertiary);
+    }
+
+    /* Methodology Section */
+    .methodology-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    .methodology-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .methodology-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .methodology-step-number {
+        min-width: 50px;
+        height: 50px;
+        background: var(--primary-green);
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .methodology-step-content h4 {
+        color: var(--primary-green);
+        margin-bottom: 10px;
+    }
+
+    .methodology-step-content p {
+        margin-bottom: 0;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        height: 180px;
+        background: var(--gray-700);
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-text-tertiary);
+        font-style: italic;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .contact-icon {
+        font-size: 1.8rem;
+        color: var(--primary-green);
+    }
+
+    .contact-text {
+        color: var(--light-text-secondary);
+    }
+
+    .contact-form {
+        background: var(--gray-800);
+        padding: 30px;
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--dark-panel-border);
+    }
+
+    .form-row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .review-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 25px;
+        border: 1px solid var(--dark-panel-border);
+        box-shadow: var(--shadow-panel);
+        transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .review-rating {
+        color: var(--warning-yellow);
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        color: var(--light-text-secondary);
+        margin-bottom: 15px;
+    }
+
+    .review-author {
+        font-weight: 600;
+        color: var(--primary-green);
+    }
+
+    .review-date {
+        font-size: 0.9rem;
+        color: var(--light-text-tertiary);
+    }
+
+    /* Awards Section */
+    .awards-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .award-item {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 20px;
+        border: 1px solid var(--dark-panel-border);
+        transition: transform 0.3s ease;
+    }
+
+    .award-item:hover {
+        transform: scale(1.05);
+    }
+
+    .award-icon {
+        font-size: 3rem;
+        color: var(--primary-green);
+        margin-bottom: 15px;
+    }
+
+    .award-title {
+        font-size: 1.2rem;
+        color: var(--light-text);
+        margin-bottom: 5px;
+    }
+
+    .award-year {
+        font-size: 0.9rem;
+        color: var(--light-text-tertiary);
+    }
+
+    /* FAQ Accordion Section */
+    .faq-accordion-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .faq-accordion {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
     /* Footer Styles */
     footer {
       text-align: center;
@@ -1185,6 +1642,15 @@
         flex-direction: column;
         gap: 15px;
         top: 70px;
+      }
+
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 15px;
       }
     }
 
@@ -1338,6 +1804,10 @@
     .p-20 { padding: 20px; }
     .d-none { display: none; }
     .d-block { display: block; }
+    .align-items-center { align-items: center; }
+    .justify-content-center { justify-content: center; }
+    .mb-30 { margin-bottom: 30px; }
+    .mb-40 { margin-bottom: 40px; }
 
   </style>
 </head>
@@ -1347,13 +1817,19 @@
 
   <!-- Top Navigation -->
   <nav class="top-nav">
-      <div class="logo">EPI</div>
+      <div class="logo">CKT</div>
       <div class="nav-links" id="navLinks">
           <a href="#about">About</a>
           <a href="#features">Features</a>
+          <a href="#methodology">Methodology</a>
+          <a href="#team">Our Team</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#pricing">Pricing</a>
           <a href="#results">Results</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#awards">Awards</a>
+          <a href="#contact">Contact</a>
           <a href="#faq">FAQ</a>
           <a href="#" onclick="openModal('registerModal')">Register</a>
       </div>
@@ -1379,11 +1855,11 @@
   <header class="hero">
     <div class="hero-overlay"></div>
     <div class="profile-img">
-      <img src="https://placehold.co/200x200/111/25d366?text=EPI" alt="Elite Pro Insights Logo" />
-      <div class="profile-badge">VERIFIED</div>
+      <img src="https://placehold.co/200x200/111/25d366?text=CK" alt="Cool Kid Profile" />
+      <div class="profile-badge">FOUNDER</div>
     </div>
-    <h1 data-text="ELITE PRO">Elite Pro Insights</h1>
-    <p>Experience the next generation of data-driven football analysis. Join our exclusive community for verified, professional-grade match insights designed for serious enthusiasts.</p>
+    <h1 data-text="COOL KID">CoolKid Tips</h1>
+    <p>Experience the next generation of data-driven football analysis. Join our exclusive community led by Cool Kid for verified, professional-grade match insights designed for serious enthusiasts.</p>
     
     <div class="stats-bar">
         <div class="stat-item">
@@ -1412,10 +1888,37 @@
       <h2 class="section-title">About Our Service</h2>
       <p class="section-subtitle">We provide meticulously researched and analyzed football insights to help you make informed decisions.</p>
       <div class="section-content">
-        <p>At Elite Pro Insights, we understand that the world of football prediction is vast and often unreliable. Our mission is to cut through the noise and deliver consistently high-quality, data-backed analysis. Our team combines decades of experience in sports analytics with cutting-edge statistical modeling to identify value and potential outcomes.</p>
+        <p>At CoolKid Tips, we understand that the world of football prediction is vast and often unreliable. Our mission is to cut through the noise and deliver consistently high-quality, data-backed analysis. Our team combines decades of experience in sports analytics with cutting-edge statistical modeling to identify value and potential outcomes.</p>
         <p>Our service is built on three core pillars: Transparency, Accuracy, and Exclusivity. We believe in building trust through clear communication and a proven track record. Our insights are not just random guesses; they are the result of rigorous research and analysis.</p>
         <p>We pride ourselves on our ethical approach. We promote responsible engagement with our content and provide strategic guidance to help members manage their own financial risk effectively.</p>
       </div>
+    </section>
+
+    <section class="stats-overview" id="stats">
+        <h2 class="section-title">Our Impact</h2>
+        <p class="section-subtitle">Numbers that define our success.</p>
+        <div class="stats-overview-grid">
+            <div class="stat-overview-card">
+                <div class="stat-overview-icon">👥</div>
+                <div class="stat-overview-value">1,200+</div>
+                <div class="stat-overview-label">Active Members</div>
+            </div>
+            <div class="stat-overview-card">
+                <div class="stat-overview-icon">🎯</div>
+                <div class="stat-overview-value">92%</div>
+                <div class="stat-overview-label">Accuracy Rate</div>
+            </div>
+            <div class="stat-overview-card">
+                <div class="stat-overview-icon">🏆</div>
+                <div class="stat-overview-value">3,500+</div>
+                <div class="stat-overview-label">Tips Delivered</div>
+            </div>
+            <div class="stat-overview-card">
+                <div class="stat-overview-icon">🌍</div>
+                <div class="stat-overview-value">15+</div>
+                <div class="stat-overview-label">Countries</div>
+            </div>
+        </div>
     </section>
 
     <section class="section" id="features">
@@ -1463,44 +1966,181 @@
                 <h4>Refined Models</h4>
                 <p>Our predictive models are continuously updated based on new data and performance feedback.</p>
             </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h4>Push Notifications</h4>
+                <p>Never miss an insight with optional push notifications to your device.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h4>Performance Tracker</h4>
+                <p>Personal dashboard to track your own betting performance against our recommendations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h4>Mobile App</h4>
+                <p>Access all features seamlessly on our dedicated mobile application.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h4>Global Coverage</h4>
+                <p>Insights covering major leagues and tournaments worldwide.</p>
+            </div>
         </div>
       </div>
+    </section>
+
+    <section class="methodology-section" id="methodology">
+        <h2 class="section-title">Our Methodology</h2>
+        <p class="section-subtitle">How we generate our predictions.</p>
+        <div class="methodology-steps">
+            <div class="methodology-step">
+                <div class="methodology-step-number">1</div>
+                <div class="methodology-step-content">
+                    <h4>Data Collection</h4>
+                    <p>We gather data from official sources, including team statistics, player performance, and historical match data.</p>
+                </div>
+            </div>
+            <div class="methodology-step">
+                <div class="methodology-step-number">2</div>
+                <div class="methodology-step-content">
+                    <h4>Statistical Modeling</h4>
+                    <p>Our proprietary models process the data to identify patterns and calculate potential outcomes.</p>
+                </div>
+            </div>
+            <div class="methodology-step">
+                <div class="methodology-step-number">3</div>
+                <div class="methodology-step-content">
+                    <h4>Expert Analysis</h4>
+                    <p>Our team of analysts reviews the model outputs, incorporating qualitative factors like team news and morale.</p>
+                </div>
+            </div>
+            <div class="methodology-step">
+                <div class="methodology-step-number">4</div>
+                <div class="methodology-step-content">
+                    <h4>Insight Generation</h4>
+                    <p>We formulate the final insight, including confidence level and recommended stake amount.</p>
+                </div>
+            </div>
+            <div class="methodology-step">
+                <div class="methodology-step-number">5</div>
+                <div class="methodology-step-content">
+                    <h4>Verification & Delivery</h4>
+                    <p>Insights are verified by a senior analyst before being delivered to members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">The minds behind CoolKid Tips.</p>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://placehold.co/150x150/111/25d366?text=CK" alt="Cool Kid" />
+                </div>
+                <h3 class="member-name">Cool Kid</h3>
+                <p class="member-role">Founder & Lead Analyst</p>
+                <p class="member-bio">With over a decade of experience in sports analytics, Cool Kid founded this service to share his passion and expertise with the world.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://placehold.co/150x150/111/0088cc?text=JD" alt="John Doe" />
+                </div>
+                <h3 class="member-name">John Doe</h3>
+                <p class="member-role">Data Scientist</p>
+                <p class="member-bio">John develops and maintains our predictive models, ensuring they adapt to the ever-changing landscape of football.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://placehold.co/150x150/111/ffaa00?text=AS" alt="Alice Smith" />
+                </div>
+                <h3 class="member-name">Alice Smith</h3>
+                <p class="member-role">Customer Support Lead</p>
+                <p class="member-bio">Alice manages our member support channels, ensuring every question is answered promptly and professionally.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://placehold.co/150x150/111/ff4444?text=MR" alt="Mike Ross" />
+                </div>
+                <h3 class="member-name">Mike Ross</h3>
+                <p class="member-role">Marketing Director</p>
+                <p class="member-bio">Mike handles our marketing and community outreach, growing our global presence.</p>
+            </div>
+        </div>
     </section>
 
     <section class="testimonials-section" id="testimonials">
       <h2 class="section-title">What Our Members Say</h2>
       <p class="section-subtitle">Hear from our global community of satisfied users.</p>
-      <div class="testimonial-container">
-        <div class="testimonial-slide active">
-            <p class="testimonial-text">"I've tried countless tipsters before joining EPI. The depth of analysis here is unmatched. It's not just about winning tips, it's about understanding the 'why' behind them. My success rate has increased dramatically."</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <p>"I've tried countless tipsters before joining CKT. The depth of analysis here is unmatched. It's not just about winning tips, it's about understanding the 'why' behind them. My success rate has increased dramatically."</p>
             <p class="testimonial-author">James M.</p>
             <p class="testimonial-country">South Africa</p>
         </div>
-        <div class="testimonial-slide">
-            <p class="testimonial-text">"The Telegram group is incredibly active and helpful. The admin and other members share great insights. The pre-match updates have saved me from placing bets on players who were unexpectedly benched."</p>
+        <div class="testimonial-card">
+            <p>"The Telegram group is incredibly active and helpful. Cool Kid and other members share great insights. The pre-match updates have saved me from placing bets on players who were unexpectedly benched."</p>
             <p class="testimonial-author">Fatima A.</p>
             <p class="testimonial-country">Kenya</p>
         </div>
-        <div class="testimonial-slide">
-            <p class="testimonial-text">"As someone new to this, the strategic guidance was a game-changer. They don't just give you picks; they teach you how to think like an analyst. The value for money is exceptional."</p>
+        <div class="testimonial-card">
+            <p>"As someone new to this, the strategic guidance was a game-changer. They don't just give you picks; they teach you how to think like an analyst. The value for money is exceptional."</p>
             <p class="testimonial-author">David L.</p>
             <p class="testimonial-country">United Kingdom</p>
         </div>
-        <div class="testimonial-slide">
-            <p class="testimonial-text">"The consistency is impressive. While no one gets it right 100%, EPI's success rate is clearly above average. Their communication about confidence levels is very professional."</p>
+        <div class="testimonial-card">
+            <p>"The consistency is impressive. While no one gets it right 100%, CoolKid Tips' success rate is clearly above average. Their communication about confidence levels is very professional."</p>
             <p class="testimonial-author">Carlos R.</p>
             <p class="testimonial-country">Spain</p>
-        </div>
-        <div class="carousel-nav">
-            <button class="carousel-dot active" onclick="changeSlide(0)"></button>
-            <button class="carousel-dot" onclick="changeSlide(1)"></button>
-            <button class="carousel-dot" onclick="changeSlide(2)"></button>
-            <button class="carousel-dot" onclick="changeSlide(3)"></button>
         </div>
       </div>
     </section>
 
     <section class="section" id="pricing">
+      <h2 class="section-title">Membership Tiers</h2>
+      <p class="section-subtitle">Choose the plan that fits your needs.</p>
+      <div class="pricing-tiers">
+          <div class="pricing-card">
+              <h3>Starter</h3>
+              <div class="pricing-price">Ksh 500<span>/month</span></div>
+              <ul class="pricing-features">
+                  <li>Access to basic picks (1-2 per day)</li>
+                  <li>Email support</li>
+                  <li>Monthly performance report</li>
+                  <li>Basic stats dashboard</li>
+              </ul>
+              <a href="https://wa.me/254113206503" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="pricing-card popular">
+              <h3>Pro</h3>
+              <div class="pricing-price">Ksh 750<span>/month</span></div>
+              <ul class="pricing-features">
+                  <li>Full access to all picks (1-3 per day)</li>
+                  <li>Direct WhatsApp & Telegram support</li>
+                  <li>Weekly live Q&A sessions</li>
+                  <li>Advanced stats dashboard</li>
+                  <li>Strategic guidance included</li>
+              </ul>
+              <a href="https://wa.me/254113206503" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="pricing-card">
+              <h3>Elite</h3>
+              <div class="pricing-price">Ksh 1,200<span>/month</span></div>
+              <ul class="pricing-features">
+                  <li>All Pro features</li>
+                  <li>Exclusive Elite-only picks</li>
+                  <li>Priority support</li>
+                  <li>Personal consultation session</li>
+                  <li>Early access to new features</li>
+              </ul>
+              <a href="https://wa.me/254113206503" class="btn btn-accent">Get Started</a>
+          </div>
+      </div>
+    </section>
+
+    <section class="section">
       <h2 class="section-title">Membership & Pricing</h2>
       <p class="section-subtitle">Transparent, one-time fees for unlimited access.</p>
       <div class="section-content">
@@ -1545,7 +2185,7 @@
         <h3 style="margin-top: 30px;">Payment Instructions for Kenya</h3>
         <ul>
           <li><strong>Paybill Number:</strong> 0711 949 099</li>
-          <li><strong>Account Name:</strong> ELITE PRO INSIGHTS</li>
+          <li><strong>Account Name:</strong> COOL KID TIPS</li>
           <li><strong>Amount:</strong> Ksh 750</li>
           <li><strong>Narration:</strong> VIP Registration</li>
         </ul>
@@ -1621,6 +2261,112 @@
         </div>
     </section>
 
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Community Gallery</h2>
+        <p class="section-subtitle">Snapshots from our vibrant member community.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+1" alt="Gallery 1"></div>
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+2" alt="Gallery 2"></div>
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+3" alt="Gallery 3"></div>
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+4" alt="Gallery 4"></div>
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+5" alt="Gallery 5"></div>
+            <div class="gallery-item"><img src="https://placehold.co/200x180/222/25d366?text=Gallery+6" alt="Gallery 6"></div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <h2 class="section-title">Member Reviews</h2>
+        <p class="section-subtitle">What our community says about us.</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Absolutely the best tipster service I've found. The analysis is top-notch and the community is fantastic."</p>
+                <p class="review-author">Michael K.</p>
+                <p class="review-date">Dec 10, 2025</p>
+            </div>
+            <div class="review-card">
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Their success rate speaks for itself. I've been a member for 6 months and it's been a profitable journey."</p>
+                <p class="review-author">Sarah T.</p>
+                <p class="review-date">Dec 5, 2025</p>
+            </div>
+            <div class="review-card">
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"The educational aspect is brilliant. I've learned so much about analyzing matches myself."</p>
+                <p class="review-author">Robert P.</p>
+                <p class="review-date">Nov 28, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-section" id="awards">
+        <h2 class="section-title">Our Awards</h2>
+        <p class="section-subtitle">Recognized for excellence in sports analysis.</p>
+        <div class="awards-grid">
+            <div class="award-item">
+                <div class="award-icon">🏆</div>
+                <div class="award-title">Best Football Tipster 2024</div>
+                <div class="award-year">Sports Insight Awards</div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon">🥇</div>
+                <div class="award-title">Top Performer</div>
+                <div class="award-year">Global Betting Review 2024</div>
+            </div>
+            <div class="award-item">
+                <div class="award-icon">⭐</div>
+                <div class="award-title">5-Star Rating</div>
+                <div class="award-year">Tipster Central 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Have questions? Get in touch with our team.</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">WhatsApp: +254 113 206503</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-text">Telegram: @coolkidtips</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text">Email: info@coolkidtips.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-text">Address: Nairobi, Kenya</div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" class="form-control" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" class="form-control" placeholder="Your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" id="contactSubject" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" class="form-control" rows="5" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <section class="section" id="faq">
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-subtitle">Find answers to common queries about our service.</p>
@@ -1665,6 +2411,24 @@
             <div class="faq-question">How do you calculate your success rate?</div>
             <div class="faq-answer">
                 <p>Our success rate is calculated based on the total number of successful predictions divided by the total number of predictions made, multiplied by 100. A 'successful' prediction means the outcome matched our insight.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Who is Cool Kid?</div>
+            <div class="faq-answer">
+                <p>Cool Kid is the founder and lead analyst of CoolKid Tips. He has over 10 years of experience in sports analytics and has built this service from the ground up with a focus on accuracy and member satisfaction.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you guarantee profits?</div>
+            <div class="faq-answer">
+                <p>No, we cannot guarantee profits. All sports betting involves risk. Our service provides informed analysis to help you make better decisions, but outcomes are never certain.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How can I contact support?</div>
+            <div class="faq-answer">
+                <p>You can reach our support team via WhatsApp (+254 113 206503), Telegram (@coolkidtips), or email (info@coolkidtips.com).</p>
             </div>
         </div>
       </div>
@@ -1797,7 +2561,7 @@
 
   <footer>
     <div class="container">
-        <p>© 2025 Elite Pro Insights. All Rights Reserved.</p>
+        <p>© 2025 CoolKid Tips. All Rights Reserved.</p>
         <p style="margin-top: 12px; font-size: 0.8rem; color: var(--light-text-tertiary);">
             This platform provides information for analytical and entertainment purposes only. Please gamble responsibly.
         </p>
@@ -1818,11 +2582,11 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
         <h3>Terms of Service</h3>
-        <p>These terms govern your access to and use of the Elite Pro Insights website and services ("Service"). By accessing or using the Service, you agree to these terms.</p>
+        <p>These terms govern your access to and use of the CoolKid Tips website and services ("Service"). By accessing or using the Service, you agree to these terms.</p>
         <p><strong>1. License to Use Content:</strong> The Service provides access to information. This information is for personal, non-commercial use only. You may not redistribute, sell, or sublicense the content without explicit written permission.</p>
         <p><strong>2. No Guarantee of Outcomes:</strong> All information provided is for educational and analytical purposes. Past performance does not guarantee future results. We do not guarantee profits or wins from using our insights.</p>
         <p><strong>3. Member Conduct:</strong> Members are expected to conduct themselves professionally within our community channels. Harassment, spam, or sharing of access credentials is prohibited and may result in termination.</p>
-        <p><strong>4. Limitation of Liability:</strong> Elite Pro Insights shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the Service.</p>
+        <p><strong>4. Limitation of Liability:</strong> CoolKid Tips shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the Service.</p>
         <div class="modal-footer">
             <button class="btn btn-outline btn-sm" onclick="closeModal('termsModal')">Close</button>
         </div>
@@ -1834,7 +2598,7 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
         <h3>Privacy Policy</h3>
-        <p>This policy describes how Elite Pro Insights collects, uses, and protects your personal data.</p>
+        <p>This policy describes how CoolKid Tips collects, uses, and protects your personal data.</p>
         <p><strong>1. Information We Collect:</strong> We collect information you provide during registration, such as your name, email, country, and WhatsApp number. We may also collect technical data like your IP address.</p>
         <p><strong>2. How We Use Your Information:</strong> Your information is used solely to facilitate your membership, communicate with you, and manage your access to our services. It is not sold or shared with third parties for marketing.</p>
         <p><strong>3. Data Security:</strong> We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
@@ -1964,30 +2728,6 @@
         });
     });
 
-    // Testimonial Carousel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentSlide = index;
-    }
-
-    function changeSlide(n) {
-        showSlide(n);
-    }
-
-    // Auto-advance carousel every 8 seconds
-    setInterval(() => {
-        let nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-    }, 8000);
-
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
@@ -2034,6 +2774,13 @@
         // In a real application, you would send this data to a server
         alert('Thank you for registering! Our team will contact you shortly via WhatsApp.');
         closeModal('registerModal');
+        this.reset(); // Clear the form
+    });
+
+    // Contact Form Submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
         this.reset(); // Clear the form
     });
 
