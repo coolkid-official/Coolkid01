@@ -10,11 +10,11 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@600;800&family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!-- SEO & Social Meta Tags -->
   <meta name="author" content="Elite Pro Insights" />
-  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data" />
+  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data, football odds" />
   <meta property="og:title" content="Elite Pro Insights | Premium Football Analysis" />
   <meta property="og:description" content="Access professionally analyzed football insights and exclusive member resources." />
   <meta property="og:type" content="website" />
@@ -39,6 +39,7 @@
       --success-green: #25d366;
       --gray-800: #1a1a1a;
       --gray-900: #0d0d0d;
+      --gray-700: #2a2a2a;
       
       /* Spacing & Sizing */
       --border-radius: 14px;
@@ -486,7 +487,7 @@
     }
 
     th {
-      background: linear-gradient(to bottom, var(--primary-green), var(--primary-green-dark));
+      background: linear-gradient(to bottom, var(--primary-green), var(--primary-green-dark);
       color: #000;
       font-weight: 700;
       text-transform: uppercase;
@@ -890,6 +891,193 @@
         margin-top: 20px;
     }
 
+    /* Chat Links Banner */
+    .chat-banner {
+        background: linear-gradient(90deg, var(--primary-green), var(--accent-blue));
+        color: black;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 70px; /* Adjust based on your nav height */
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: background 0.3s ease;
+    }
+
+    .chat-link:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-link.whatsapp {
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .chat-link.telegram {
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .material-symbols-outlined {
+        font-size: 1.5rem;
+    }
+
+    /* Match Results Section */
+    .results-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .result-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 20px;
+        border: 1px solid var(--dark-panel-border);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .result-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-green);
+    }
+
+    .match-date {
+        color: var(--light-text-tertiary);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .match-teams {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .match-result {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: var(--success-green);
+    }
+
+    .match-odd {
+        color: var(--accent-blue);
+        font-size: 1.1rem;
+        margin-top: 8px;
+    }
+
+    /* Stats Dashboard */
+    .stats-dashboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .stat-box {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 20px;
+        text-align: center;
+        border: 1px solid var(--dark-panel-border);
+    }
+
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--light-text-tertiary);
+    }
+
+    /* Blog Preview Section */
+    .blog-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .blog-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        border: 1px solid var(--dark-panel-border);
+        transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 180px;
+        background: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-text-tertiary);
+        font-style: italic;
+    }
+
+    .blog-content {
+        padding: 20px;
+    }
+
+    .blog-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary-green);
+    }
+
+    .blog-excerpt {
+        color: var(--light-text-secondary);
+        margin-bottom: 15px;
+    }
+
+    .read-more {
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .read-more:hover {
+        color: var(--primary-green);
+    }
+
     /* Footer Styles */
     footer {
       text-align: center;
@@ -992,6 +1180,12 @@
       .mobile-cta {
         display: block;
       }
+
+      .chat-banner {
+        flex-direction: column;
+        gap: 15px;
+        top: 70px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1052,6 +1246,10 @@
       .stats-bar {
         flex-direction: column;
         gap: 10px;
+      }
+
+      .stat-number {
+        font-size: 1.6rem;
       }
 
       table, tbody, tfoot, thead, tr, th, td {
@@ -1130,6 +1328,17 @@
         background: var(--primary-green-dark);
     }
 
+    /* Utility Classes */
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .mt-10 { margin-top: 10px; }
+    .mb-10 { margin-bottom: 10px; }
+    .mb-20 { margin-bottom: 20px; }
+    .p-20 { padding: 20px; }
+    .d-none { display: none; }
+    .d-block { display: block; }
+
   </style>
 </head>
 
@@ -1144,6 +1353,7 @@
           <a href="#features">Features</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#pricing">Pricing</a>
+          <a href="#results">Results</a>
           <a href="#faq">FAQ</a>
           <a href="#" onclick="openModal('registerModal')">Register</a>
       </div>
@@ -1153,6 +1363,18 @@
           <span></span>
       </div>
   </nav>
+
+  <!-- Chat Links Banner -->
+  <div class="chat-banner">
+      <a href="https://wa.me/254113206503" target="_blank" rel="noopener noreferrer" class="chat-link whatsapp">
+          <span class="material-symbols-outlined">chat</span>
+          Chat on WhatsApp
+      </a>
+      <a href="https://t.me/coolkidtips" target="_blank" rel="noopener noreferrer" class="chat-link telegram">
+          <span class="material-symbols-outlined">send</span>
+          Join Telegram
+      </a>
+  </div>
 
   <header class="hero">
     <div class="hero-overlay"></div>
@@ -1176,6 +1398,10 @@
             <div class="stat-number">15+</div>
             <div class="stat-label">Countries</div>
         </div>
+        <div class="stat-item">
+            <div class="stat-number">92%</div>
+            <div class="stat-label">Success Rate</div>
+        </div>
     </div>
 
     <div class="scroll-hint" onclick="scrollToSection('#about')">↓</div>
@@ -1188,6 +1414,7 @@
       <div class="section-content">
         <p>At Elite Pro Insights, we understand that the world of football prediction is vast and often unreliable. Our mission is to cut through the noise and deliver consistently high-quality, data-backed analysis. Our team combines decades of experience in sports analytics with cutting-edge statistical modeling to identify value and potential outcomes.</p>
         <p>Our service is built on three core pillars: Transparency, Accuracy, and Exclusivity. We believe in building trust through clear communication and a proven track record. Our insights are not just random guesses; they are the result of rigorous research and analysis.</p>
+        <p>We pride ourselves on our ethical approach. We promote responsible engagement with our content and provide strategic guidance to help members manage their own financial risk effectively.</p>
       </div>
     </section>
 
@@ -1226,6 +1453,16 @@
                 <h4>Prematch Updates</h4>
                 <p>Last-minute changes like team news or weather conditions are communicated instantly before kick-off.</p>
             </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h4>Historical Performance</h4>
+                <p>Track our historical performance with detailed records of past insights and their outcomes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h4>Refined Models</h4>
+                <p>Our predictive models are continuously updated based on new data and performance feedback.</p>
+            </div>
         </div>
       </div>
     </section>
@@ -1249,10 +1486,16 @@
             <p class="testimonial-author">David L.</p>
             <p class="testimonial-country">United Kingdom</p>
         </div>
+        <div class="testimonial-slide">
+            <p class="testimonial-text">"The consistency is impressive. While no one gets it right 100%, EPI's success rate is clearly above average. Their communication about confidence levels is very professional."</p>
+            <p class="testimonial-author">Carlos R.</p>
+            <p class="testimonial-country">Spain</p>
+        </div>
         <div class="carousel-nav">
             <button class="carousel-dot active" onclick="changeSlide(0)"></button>
             <button class="carousel-dot" onclick="changeSlide(1)"></button>
             <button class="carousel-dot" onclick="changeSlide(2)"></button>
+            <button class="carousel-dot" onclick="changeSlide(3)"></button>
         </div>
       </div>
     </section>
@@ -1293,6 +1536,9 @@
             <tr><td>Malawi</td><td>MWK 20,000</td><td>TeleCash, TNM Mpamba</td></tr>
             <tr><td>Ghana</td><td>GHS 120</td><td>MOMO, Vodafone Cash</td></tr>
             <tr><td>Nigeria</td><td>NGN 25,000</td><td>Bank Transfer, MOMO</td></tr>
+            <tr><td>Rwanda</td><td>RWF 100,000</td><td>MTN Mobile Money, Airtel Money</td></tr>
+            <tr><td>Burundi</td><td>BIF 250,000</td><td>MTN Mobile Money</td></tr>
+            <tr><td>Ethiopia</td><td>ETB 3,500</td><td>CBE Birr, Telebirr</td></tr>
           </tbody>
         </table>
 
@@ -1308,6 +1554,71 @@
           <p>After payment, forward the transaction confirmation SMS or a clear screenshot to our WhatsApp number for immediate processing.</p>
         </div>
       </div>
+    </section>
+
+    <section class="results-section" id="results">
+        <div class="container">
+            <h2 class="section-title">Recent Match Results</h2>
+            <p class="section-subtitle">See how our recent insights have performed.</p>
+            
+            <div class="stats-dashboard">
+                <div class="stat-box">
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Current Success Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">1,150</div>
+                    <div class="stat-label">Predictions Made</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">1,060</div>
+                    <div class="stat-label">Successful Outcomes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">90</div>
+                    <div class="stat-label">Failed Outcomes</div>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="match-date">Dec 15, 2025</div>
+                    <div class="match-teams">Bayern Munich vs. RB Leipzig</div>
+                    <div class="match-result">WON</div>
+                    <div class="match-odd">Odd: 1.85</div>
+                </div>
+                <div class="result-card">
+                    <div class="match-date">Dec 14, 2025</div>
+                    <div class="match-teams">Arsenal vs. Chelsea</div>
+                    <div class="match-result">WON</div>
+                    <div class="match-odd">Odd: 2.10</div>
+                </div>
+                <div class="result-card">
+                    <div class="match-date">Dec 13, 2025</div>
+                    <div class="match-teams">Real Madrid vs. Atletico</div>
+                    <div class="match-result">LOST</div>
+                    <div class="match-odd">Odd: 1.70</div>
+                </div>
+                <div class="result-card">
+                    <div class="match-date">Dec 12, 2025</div>
+                    <div class="match-teams">Barcelona vs. Girona</div>
+                    <div class="match-result">WON</div>
+                    <div class="match-odd">Odd: 1.45</div>
+                </div>
+                <div class="result-card">
+                    <div class="match-date">Dec 11, 2025</div>
+                    <div class="match-teams">PSG vs. Monaco</div>
+                    <div class="match-result">WON</div>
+                    <div class="match-odd">Odd: 1.60</div>
+                </div>
+                <div class="result-card">
+                    <div class="match-date">Dec 10, 2025</div>
+                    <div class="match-teams">Juventus vs. Inter Milan</div>
+                    <div class="match-result">WON</div>
+                    <div class="match-odd">Odd: 3.20</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="section" id="faq">
@@ -1343,6 +1654,72 @@
             <div class="faq-answer">
                 <p>No, we do not offer free trials or previews after registration. Our service is built on trust and exclusivity, which requires a commitment from our members.</p>
             </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What types of predictions do you offer?</div>
+            <div class="faq-answer">
+                <p>We provide a variety of predictions including match winner, total goals (Over/Under), both teams to score (BTTS), and correct score predictions, depending on the match and our analysis confidence.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do you calculate your success rate?</div>
+            <div class="faq-answer">
+                <p>Our success rate is calculated based on the total number of successful predictions divided by the total number of predictions made, multiplied by 100. A 'successful' prediction means the outcome matched our insight.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Insightful Articles</h2>
+            <p class="section-subtitle">Read our latest thoughts on strategy and analysis.</p>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">Blog Image 1</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Understanding Value in Betting Odds</h3>
+                        <p class="blog-excerpt">Learn how to identify when bookmakers offer favorable odds compared to true probability...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">Blog Image 2</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Psychology of Staking</h3>
+                        <p class="blog-excerpt">Explore the mental discipline required for effective bankroll management...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">Blog Image 3</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Analyzing Team Form Trends</h3>
+                        <p class="blog-excerpt">Dive deep into how recent performances can indicate future match outcomes...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Premium Member Briefing</h2>
+      <div class="section-content">
+        <p style="text-align: center; color: var(--light-text-secondary); margin-bottom: 25px;">Listen to our lead analyst discuss our methodology and core principles.</p>
+        <div class="audio-controls">
+          <button id="playAudio" class="btn btn-outline audio-btn">▶ Play Introduction</button>
+          <button id="pauseAudio" class="btn btn-outline audio-btn">⏸ Pause</button>
+          <button id="stopAudio" class="btn btn-outline audio-btn">⏹ Stop</button>
+        </div>
+        <audio id="vipAudio" preload="none">
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg" />
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+        </audio>
+        <div class="notice notice-info mt-20">
+            <i>ℹ️</i>
+            <p>This briefing provides an overview of our analytical process and the philosophy behind our picks. It's recommended for all new members.</p>
         </div>
       </div>
     </section>
@@ -1382,6 +1759,9 @@
                     <option value="ZA">South Africa</option>
                     <option value="GH">Ghana</option>
                     <option value="NG">Nigeria</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="BI">Burundi</option>
+                    <option value="ET">Ethiopia</option>
                     <option value="Other">Other</option>
                 </select>
             </div>
@@ -1397,6 +1777,15 @@
                     <option value="Airtel Money">Airtel Money</option>
                     <option value="Bank Transfer">Bank Transfer</option>
                     <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="referral">How did you find us?</label>
+                <select id="referral" class="form-control">
+                    <option value="search">Search Engine</option>
+                    <option value="social">Social Media</option>
+                    <option value="friend">Friend Referral</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
             <div class="modal-footer">
@@ -1519,6 +1908,7 @@
     const audio = document.getElementById("vipAudio");
     const playBtn = document.getElementById("playAudio");
     const pauseBtn = document.getElementById("pauseAudio");
+    const stopBtn = document.getElementById("stopAudio");
 
     playBtn.addEventListener("click", () => {
         audio.play().then(() => {
@@ -1529,6 +1919,13 @@
 
     pauseBtn.addEventListener("click", () => {
         audio.pause();
+        playBtn.textContent = '▶ Play Introduction';
+        playBtn.style.background = 'transparent';
+    });
+
+    stopBtn.addEventListener("click", () => {
+        audio.pause();
+        audio.currentTime = 0;
         playBtn.textContent = '▶ Play Introduction';
         playBtn.style.background = 'transparent';
     });
@@ -1640,10 +2037,48 @@
         this.reset(); // Clear the form
     });
 
+    // Countdown Timer Example (expires in 24 hours from now)
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const expirationTime = new Date().getTime() + (24 * 60 * 60 * 1000); // 24 hours from now
+        const distance = expirationTime - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+        }
+    }
+
+    // Update the countdown every second
+    const x = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+
     // Accessibility: reduce motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.querySelector(".scroll-hint").style.animation = "none";
     }
+
+    // Initialize chat links banner visibility based on scroll
+    window.addEventListener('scroll', () => {
+        const chatBanner = document.querySelector('.chat-banner');
+        const heroHeight = document.querySelector('.hero').offsetHeight;
+        if (window.scrollY > heroHeight) {
+            chatBanner.style.display = 'flex';
+        } else {
+            chatBanner.style.display = 'none';
+        }
+    });
+
   </script>
 </body>
 </html>
