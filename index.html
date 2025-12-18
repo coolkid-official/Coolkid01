@@ -135,21 +135,6 @@
       overflow: hidden;
     }
 
-    .btn::before {
-      content: "";
-      position: absolute;
-      top:0;
-      left:-100%;
-      width:100%;
-      height:100%;
-      background: rgba(255,255,255,0.2);
-      transition: 0.5s;
-    }
-
-    .btn:hover::before {
-      left:100%;
-    }
-
     .btn-primary {
       background: var(--primary);
       color: #000;
@@ -244,43 +229,6 @@
 </section>
 
 <section class="section">
-  <h2>Why Choose Us</h2>
-  <ul>
-    <li>1200+ verified VIP members</li>
-    <li>3500+ historical match insights shared</li>
-    <li>Members across 15+ countries</li>
-    <li>Private, secure & controlled registration</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>VIP Audio Briefing</h2>
-  <p style="text-align:center;color:#ccc;">
-    Tap play to hear a short introduction about our VIP service
-  </p>
-
-  <div style="text-align:center;">
-    <button id="playAudio" class="btn btn-primary">▶ Play Audio</button>
-    <button id="pauseAudio" class="btn btn-accent">⏸ Pause</button>
-  </div>
-
-  <audio id="vipAudio">
-    <source src="vip-intro.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-  </audio>
-</section>
-
-<section class="section">
-  <h2>Registration Steps</h2>
-  <ol>
-    <li>Contact us via WhatsApp or Telegram</li>
-    <li>Submit basic registration details</li>
-    <li>Complete one-time VIP registration fee</li>
-    <li>Receive verified VIP access confirmation</li>
-  </ol>
-</section>
-
-<section class="section">
   <h2>Registration Fees & Payment Methods</h2>
   <table>
     <tr>
@@ -291,6 +239,7 @@
     <tr><td>Kenya</td><td>Ksh 750</td><td>M-Pesa • Till Number • Airtel Money</td></tr>
     <tr><td>Tanzania</td><td>TZS 20,000</td><td>Safaricom • Airtel Money</td></tr>
     <tr><td>Uganda</td><td>UGX 25,000</td><td>MTN • Airtel Money</td></tr>
+    <tr><td>Nigeria</td><td>₦10,000</td><td>OPay</td></tr>
     <tr><td>Zambia</td><td>ZMW 250</td><td>T-Pin • Airtel Money</td></tr>
     <tr><td>Zimbabwe</td><td>USD 55</td><td>Mwos • Mukuru • Inbucks</td></tr>
     <tr><td>South Africa</td><td>R 300</td><td>FNB • Mukuru • Capitec</td></tr>
@@ -306,50 +255,23 @@
     <li><strong>Phone Number:</strong> 0711949382</li>
     <li><strong>Account Name:</strong> BRIAN K.</li>
     <li><strong>Amount:</strong> Ksh 750</li>
+  </ul>
+
+  <h3 style="color:#25d366;margin-top:25px;">🇳🇬 Nigeria – OPay</h3>
+  <ul>
+    <li><strong>Bank:</strong> OPay</li>
+    <li><strong>Account Name:</strong> BRIAN K.</li>
+    <li><strong>Amount:</strong> ₦10,000</li>
     <li><strong>Purpose:</strong> VIP Registration Fee</li>
   </ul>
 
-  <p>
-    Once payment is completed, kindly send the confirmation message or screenshot via WhatsApp
-    for immediate verification and activation.
-  </p>
-
-  <h3 style="color:#25d366;margin-top:25px;">🇺🇬 Uganda – MTN Mobile Money</h3>
-  <ol>
-    <li>Dial <strong>*165#</strong></li>
-    <li>Select <strong>Send Money</strong></li>
-    <li>Choose <strong>Africa Countries</strong></li>
-    <li>Select <strong>East Africa</strong></li>
-    <li>Choose <strong>Kenya</strong></li>
-    <li>Select <strong>Safaricom M-Pesa</strong></li>
-    <li>Enter Number: <strong>254711949382</strong></li>
-    <li>Enter Amount: <strong>UGX 25,000</strong></li>
-    <li>Confirm with MTN PIN</li>
-  </ol>
-
   <p style="color:#ffaa00;margin-top:15px;">
-    🌍 If your country is not listed, please contact us via WhatsApp and we will assist you instantly.
-  </p>
-</section>
-
-<section class="section">
-  <h2>VIP Rules, Trust & Legal Notice</h2>
-  <ul>
-    <li>VIP access is confidential & non-transferable</li>
-    <li>No refunds after VIP activation</li>
-    <li>No free content after registration</li>
-    <li>Members must follow stake guidance responsibly</li>
-  </ul>
-
-  <p style="color:#ff7777;margin-top:15px;">
-    ⚠ Elite VIP does not guarantee profits. Information is for analytical purposes only.
+    🌍 If your country is not listed, contact us via WhatsApp for instant assistance.
   </p>
 </section>
 
 <section class="section" style="text-align:center;">
-  <a class="btn btn-primary whatsapp-track" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
-  <!-- ADDITION: Admin Panel Button -->
-  <a class="btn btn-accent" href="admin-panel.php" target="_blank">ADMIN PANEL</a>
+  <a class="btn btn-primary" href="https://wa.me/254113206503">REGISTER VIP VIA WHATSAPP</a>
 </section>
 
 </main>
@@ -358,56 +280,5 @@
   © 2025 Elite VIP Fixed Matches. All Rights Reserved.
 </footer>
 
-<div class="mobile-cta">
-  <a class="whatsapp-track" href="https://wa.me/254113206503">JOIN VIP VIA WHATSAPP</a>
-</div>
-
-<script>
-  // Particle animation
-  const canvas = document.getElementById("particle-canvas");
-  const ctx = canvas.getContext("2d");
-  function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
-  resize(); addEventListener("resize", resize);
-
-  const particles = Array.from({length:80},()=>({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2+1,
-    dx:(Math.random()-0.5)*0.5,
-    dy:(Math.random()-0.5)*0.5
-  }));
-
-  function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle="rgba(37,211,102,0.3)";
-      ctx.fill();
-      p.x+=p.dx; p.y+=p.dy;
-      if(p.x<0||p.x>canvas.width) p.dx*=-1;
-      if(p.y<0||p.y>canvas.height) p.dy*=-1;
-    });
-    requestAnimationFrame(animate);
-  }
-  animate();
-
-  // Audio
-  const audio = document.getElementById("vipAudio");
-  document.getElementById("playAudio").onclick = () => audio.play();
-  document.getElementById("pauseAudio").onclick = () => audio.pause();
-
-  // WhatsApp Click Tracking
-  document.querySelectorAll(".whatsapp-track").forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      console.log("WhatsApp CTA clicked:", new Date().toISOString());
-    });
-  });
-
-  setTimeout(()=>{
-    window.scrollTo({ top: innerHeight*0.6, behavior:"smooth" });
-  },1500);
-</script>
-
 </body>
-</html> 
+</html>
