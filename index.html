@@ -56,7 +56,109 @@
       overflow-x: hidden;
     }
 
-    #particle-canvas {
+    #particle-canvas {      z-index: 10;
+    }
+
+    /* Hero Section */
+    header.hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid rgba(37, 211, 102, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(37, 211, 102, 0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.5);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      background: #000;
+      animation: scaleIn 0.8s ease-out;
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+      .profile-img {
+        width: 192px;
+        height: 192px;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      animation: slideDown 0.8s ease-out 0.2s backwards;
+    }
+
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    header h1 span {
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+    }
+
+    header p {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      max-width: 32rem;
+      margin: 0 auto 3rem;
+      animation: slideDown 0.8s ease-out 0.4s backwards;
+
       position: fixed;
       inset: 0;
       z-index: 0;
