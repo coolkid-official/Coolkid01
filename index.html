@@ -14,7 +14,7 @@
 
   <!-- SEO & Social Meta Tags -->
   <meta name="author" content="CoolKid Tips" />
-  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data, football odds, Cool Kid, CoolKid Tips, fixed matches, sure bets, betting strategy" />
+  <meta name="keywords" content="football predictions, sports analysis, betting tips, verified insights, premium sports data, football odds, Cool Kid, CoolKid Tips, fixed matches, sure bets, betting strategy, Kenya, M-Pesa" />
   <meta property="og:title" content="CoolKid Tips | Elite Football Predictions" />
   <meta property="og:description" content="Access professionally analyzed football insights from Cool Kid's exclusive community." />
   <meta property="og:type" content="website" />
@@ -1535,6 +1535,146 @@
         margin: 0 auto;
     }
 
+    /* Testimonials Carousel Section */
+    .testimonials-carousel-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    /* Results History Table */
+    .results-history-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .results-history-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        box-shadow: var(--shadow-panel);
+    }
+
+    .results-history-table th, .results-history-table td {
+        padding: 14px;
+        border: 1px solid var(--dark-panel-border);
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .results-history-table th {
+        background: linear-gradient(to bottom, var(--primary-green), var(--primary-green-dark));
+        color: #000;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .results-history-table tr:nth-child(even) {
+        background-color: #1e1e1e;
+    }
+
+    .results-history-table tr:hover {
+        background-color: #2a2a2a;
+    }
+
+    /* Performance Tracker Section */
+    .performance-tracker-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    .performance-tracker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .performance-card {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 25px;
+        border: 1px solid var(--dark-panel-border);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .performance-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .performance-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 10px;
+    }
+
+    .performance-label {
+        font-size: 1.1rem;
+        color: var(--light-text-secondary);
+    }
+
+    /* Community Guidelines Section */
+    .guidelines-section {
+        background: var(--gray-900);
+        padding: 60px 20px;
+    }
+
+    .guidelines-list {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 20px;
+    }
+
+    .guidelines-list li {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 3px solid var(--primary-green);
+    }
+
+    /* Payment Methods Section */
+    .payment-methods-section {
+        background: var(--dark-panel);
+        padding: 60px 20px;
+    }
+
+    .payment-methods-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .payment-method {
+        background: var(--gray-800);
+        border-radius: var(--border-radius-sm);
+        padding: 20px;
+        border: 1px solid var(--dark-panel-border);
+        transition: transform 0.3s ease;
+    }
+
+    .payment-method:hover {
+        transform: scale(1.05);
+    }
+
+    .payment-icon {
+        font-size: 2.5rem;
+        color: var(--primary-green);
+        margin-bottom: 10px;
+    }
+
+    .payment-name {
+        font-size: 1rem;
+        color: var(--light-text);
+    }
+
     /* Footer Styles */
     footer {
       text-align: center;
@@ -1718,11 +1858,13 @@
         font-size: 1.6rem;
       }
 
-      table, tbody, tfoot, thead, tr, th, td {
+      table, tbody, tfoot, thead, tr, th, td,
+      .results-history-table, .results-history-table tbody, .results-history-table tfoot, .results-history-table thead, .results-history-table tr, .results-history-table th, .results-history-table td {
         display: block;
       }
 
-      th, td {
+      th, td,
+      .results-history-table th, .results-history-table td {
         width: 100%;
         box-sizing: border-box;
         text-align: left;
@@ -1731,11 +1873,11 @@
         border-bottom: 1px solid var(--dark-panel-border);
       }
 
-      th {
+      th, .results-history-table th {
         display: none; /* Hide headers on mobile, rely on context */
       }
 
-      tr {
+      tr, .results-history-table tr {
         border: 1px solid var(--dark-panel-border);
         border-radius: var(--border-radius-sm);
         margin-bottom: 15px;
@@ -1831,6 +1973,9 @@
           <a href="#awards">Awards</a>
           <a href="#contact">Contact</a>
           <a href="#faq">FAQ</a>
+          <a href="#performance">Performance</a>
+          <a href="#guidelines">Guidelines</a>
+          <a href="#payment">Payment</a>
           <a href="#" onclick="openModal('registerModal')">Register</a>
       </div>
       <div class="hamburger" id="hamburger">
@@ -1985,6 +2130,21 @@
                 <div class="feature-icon">🌐</div>
                 <h4>Global Coverage</h4>
                 <p>Insights covering major leagues and tournaments worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h4>Educational Resources</h4>
+                <p>Access our library of guides and articles on betting strategy and analysis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h4>Community Forum</h4>
+                <p>Engage with other members in our private, moderated forum.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h4>Live Match Analysis</h4>
+                <p>Real-time analysis during live matches for in-play betting opportunities.</p>
             </div>
         </div>
       </div>
@@ -2261,6 +2421,36 @@
         </div>
     </section>
 
+    <section class="results-history-section" id="results-history">
+        <div class="container">
+            <h2 class="section-title">Historical Results Archive</h2>
+            <p class="section-subtitle">A detailed log of our past predictions and outcomes.</p>
+            <table class="results-history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Match</th>
+                        <th>Prediction</th>
+                        <th>Result</th>
+                        <th>Odd</th>
+                        <th>Stake</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2025-12-15</td><td>Bayern vs. Leipzig</td><td>Bayern Win</td><td>2-1</td><td>1.85</td><td>50</td><td>WON</td></tr>
+                    <tr><td>2025-12-14</td><td>Arsenal vs. Chelsea</td><td>Draw</td><td>1-1</td><td>3.20</td><td>30</td><td>WON</td></tr>
+                    <tr><td>2025-12-13</td><td>Madrid vs. Atleti</td><td>Over 2.5 Goals</td><td>3-0</td><td>1.70</td><td>40</td><td>WON</td></tr>
+                    <tr><td>2025-12-12</td><td>Barca vs. Girona</td><td>Barca -1.5</td><td>4-1</td><td>2.10</td><td>60</td><td>WON</td></tr>
+                    <tr><td>2025-12-11</td><td>PSG vs. Monaco</td><td>Both Teams Score</td><td>2-2</td><td>1.60</td><td>35</td><td>WON</td></tr>
+                    <tr><td>2025-12-10</td><td>Juve vs. Inter</td><td>Under 2.5 Goals</td><td>1-0</td><td>1.90</td><td>45</td><td>WON</td></tr>
+                    <tr><td>2025-12-09</td><td>Liverpool vs. City</td><td>Liverpool Win</td><td>2-3</td><td>2.50</td><td>55</td><td>LOST</td></tr>
+                    <tr><td>2025-12-08</td><td>Barca vs. Madrid</td><td>Draw</td><td>2-2</td><td>3.50</td><td>25</td><td>WON</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <section class="gallery-section" id="gallery">
         <h2 class="section-title">Community Gallery</h2>
         <p class="section-subtitle">Snapshots from our vibrant member community.</p>
@@ -2321,6 +2511,73 @@
         </div>
     </section>
 
+    <section class="performance-tracker-section" id="performance">
+        <h2 class="section-title">Your Performance Tracker</h2>
+        <p class="section-subtitle">Monitor your betting performance against our insights.</p>
+        <div class="performance-tracker-grid">
+            <div class="performance-card">
+                <div class="performance-value">85%</div>
+                <div class="performance-label">Your Success Rate</div>
+            </div>
+            <div class="performance-card">
+                <div class="performance-value">Ksh 15,000</div>
+                <div class="performance-label">Net Profit</div>
+            </div>
+            <div class="performance-card">
+                <div class="performance-value">120</div>
+                <div class="performance-label">Tips Followed</div>
+            </div>
+            <div class="performance-card">
+                <div class="performance-value">Ksh 50</div>
+                <div class="performance-label">Avg. Stake</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guidelines-section" id="guidelines">
+        <h2 class="section-title">Community Guidelines</h2>
+        <p class="section-subtitle">Rules for participating in our community channels.</p>
+        <ul class="guidelines-list">
+            <li>Be respectful and courteous to all members.</li>
+            <li>No spam, advertising, or sharing of external tipster links.</li>
+            <li>Do not share access credentials or invite unregistered users.</li>
+            <li>Keep discussions relevant to football and betting strategy.</li>
+            <li>Respect the privacy of other members.</li>
+            <li>Follow the advice provided responsibly and within your means.</li>
+        </ul>
+    </section>
+
+    <section class="payment-methods-section" id="payment">
+        <h2 class="section-title">Accepted Payment Methods</h2>
+        <p class="section-subtitle">Secure and convenient ways to pay your membership fee.</p>
+        <div class="payment-methods-grid">
+            <div class="payment-method">
+                <div class="payment-icon">📱</div>
+                <div class="payment-name">M-Pesa</div>
+            </div>
+            <div class="payment-method">
+                <div class="payment-icon">💳</div>
+                <div class="payment-name">Bank Transfer</div>
+            </div>
+            <div class="payment-method">
+                <div class="payment-icon">🌐</div>
+                <div class="payment-name">Online Wallets</div>
+            </div>
+            <div class="payment-method">
+                <div class="payment-icon">📱</div>
+                <div class="payment-name">Airtel Money</div>
+            </div>
+            <div class="payment-method">
+                <div class="payment-icon">🌐</div>
+                <div class="payment-name">Mukuru</div>
+            </div>
+            <div class="payment-method">
+                <div class="payment-icon">📱</div>
+                <div class="payment-name">MTN Mobile Money</div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <h2 class="section-title">Contact Us</h2>
         <p class="section-subtitle">Have questions? Get in touch with our team.</p>
@@ -2328,11 +2585,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
-                    <div class="contact-text">WhatsApp: +254 113 206503</div>
+                    <div class="contact-text">WhatsApp: <a href="https://wa.me/254113206503" target="_blank" rel="noopener">+254 113 206503</a></div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">💬</div>
-                    <div class="contact-text">Telegram: @coolkidtips</div>
+                    <div class="contact-text">Telegram: <a href="https://t.me/coolkidtips" target="_blank" rel="noopener">@coolkidtips</a></div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
@@ -2431,6 +2688,36 @@
                 <p>You can reach our support team via WhatsApp (+254 113 206503), Telegram (@coolkidtips), or email (info@coolkidtips.com).</p>
             </div>
         </div>
+        <div class="faq-item">
+            <div class="faq-question">Is M-Pesa the only payment method in Kenya?</div>
+            <div class="faq-answer">
+                <p>No, we accept M-Pesa, Airtel Money, and Equitel in Kenya. Please see our pricing section for full details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is the minimum stake amount?</div>
+            <div class="faq-answer">
+                <p>There is no minimum stake imposed by us. We recommend members only stake what they can afford to lose and manage their bankroll responsibly.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you offer tips for other sports?</div>
+            <div class="faq-answer">
+                <p>Currently, our primary focus is on football. However, we may expand to other sports based on member interest and demand in the future.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How long do you provide pre-match updates?</div>
+            <div class="faq-answer">
+                <p>Pre-match updates are typically sent within 2 hours of kick-off, once final team sheets and any last-minute news are confirmed.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I cancel my membership anytime?</div>
+            <div class="faq-answer">
+                <p>While you can leave our community channels at any time, the initial registration fee is non-refundable. Monthly subscription plans auto-renew until cancelled.</p>
+            </div>
+        </div>
       </div>
     </section>
 
@@ -2460,6 +2747,14 @@
                     <div class="blog-content">
                         <h3 class="blog-title">Analyzing Team Form Trends</h3>
                         <p class="blog-excerpt">Dive deep into how recent performances can indicate future match outcomes...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">Blog Image 4</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Importance of Bankroll Management</h3>
+                        <p class="blog-excerpt">Why managing your money is just as important as picking the right teams...</p>
                         <a href="#" class="read-more">Read More</a>
                     </div>
                 </div>
@@ -2828,4 +3123,4 @@
 
   </script>
 </body>
-</html>
+  </html>
